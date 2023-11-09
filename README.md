@@ -7,7 +7,7 @@ Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (2023): The impact of co
 
 Preprint is fully available here:
 
-The repository is organised into 3 folders: _data_, _code_
+The repository is organised into 3 folders: 'data', 'code'
 
 # Requeriments
 
