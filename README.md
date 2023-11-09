@@ -11,7 +11,8 @@ The repository is organised into 3 folders: `model`, `code`, `data`
 
 # Requeriments
 
-NetLogo
+* NetLogo
+* R 3.2.4, using the packages dplyr, ggplot2, and reshape2 (for the images)
 
 # Data structure
 
