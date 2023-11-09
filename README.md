@@ -7,12 +7,12 @@ Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (2023): The impact of co
 
 Preprint is fully available here:
 
-The repository is organised into 3 folders: `model`, `code`, `data`
+The repository is organized into 3 folders: `model`, `code`, `data`
 
 # Requeriments
 
 * NetLogo
-* R 3.2.4, using the packages dplyr, ggplot2, and reshape2 (for the images)
+* R version 3.2.4, using the packages `dplyr`, `ggplot2`, and `reshape2` (data visualization)
 
 # Data structure
 
