@@ -1,6 +1,6 @@
 # PaleoCOOP
 
-PaleoCOOP is an Evolutionary theoretical Agent-Based Model exploring the effect of cooperation on dispersal under different climate constraints in two study sub-regions, the Altai and Tian Shan Mountains. 
+PaleoCOOP is an evolutionary theoretical Agent-Based Model to explore the effect of cooperation on dispersal under different climate constraints in two study sub-regions, the Altai and Tian Shan Mountains. 
 
 This repository contains data and scripts used in the following paper:
 
