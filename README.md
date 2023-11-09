@@ -14,6 +14,12 @@ The repository is organised into 3 folders: `model`, `code`, `data`
 NetLogo
 
 # Data structure
+
+* `model`
+* `code`
+* `data`
+
+
 # Funding
 The PALEOSILKROAD project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement n° 714842; PALAEOSILKROAD project)
 # License
