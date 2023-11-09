@@ -17,3 +17,4 @@ NetLogo
 # Funding
 The PALEOSILKROAD project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement n° 714842; PALAEOSILKROAD project)
 # License
+CC-BY 3.0
