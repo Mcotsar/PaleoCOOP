@@ -8,6 +8,8 @@ This repository contains data and scripts used in the following paper:
 
 Preprint is fully available here:
 
+The agent-based model and the ODD protocol are available on OSF and Zenodo: 
+
 The repository is organized into 3 folders: `model`, `code`, `data`
 
 # Requeriments
