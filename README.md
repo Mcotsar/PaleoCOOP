@@ -7,7 +7,7 @@ Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (2023): The impact of co
 
 Preprint is fully available here:
 
-The repository is organised into 3 folders: 'data', 'code'
+The repository is organised into 3 folders: ´data´, ´code´
 
 # Requeriments
 
@@ -17,4 +17,4 @@ NetLogo
 # Funding
 The PALEOSILKROAD project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement n° 714842; PALAEOSILKROAD project)
 # License
-CC-BY 3.0
+
