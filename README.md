@@ -12,7 +12,7 @@ The repository is organized into 3 folders: `model`, `code`, `data`
 
 # Requeriments
 
-* NetLogo
+* NetLogo 6.2.2
 * R version 3.2.4, using the packages `dplyr`, `ggplot2`, and `reshape2` (data visualization)
 
 # Data structure
