@@ -4,11 +4,10 @@ PaleoCOOP is an evolutionary theoretical Agent-Based Model to explore the effect
 
 This repository contains data and scripts used in the following paper:
 
-* Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (2023): The impact of cooperation under climate constraints: an Agent-Based Model for exploring Paleolithic behavioral adaptations in the Inner Asian Mountain Corridor. 
+* Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (submitted Nov 2023): The impact of cooperation under climate constraints: an Agent-Based Model for exploring Paleolithic behavioral adaptations in the Inner Asian Mountain Corridor. 
 
-Preprint is fully available here:
 
-The agent-based model and the ODD protocol are available on OSF and Zenodo: 
+The agent-based model and the ODD protocol are available on OSF: 
 
 The repository is organized into 3 folders: `model`, `code`, `data`
 
