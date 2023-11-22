@@ -9,7 +9,7 @@ This repository contains data and scripts used in the following paper:
 
 The agent-based model and the ODD protocol are available on OSF: 
 
-The repository is organized into 3 folders: `model`, `code`, `data`
+The repository is organized into 3 folders: `model`, `code`, `data`, `protocol`
 
 # Requeriments
 
