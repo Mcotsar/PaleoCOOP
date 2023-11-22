@@ -22,6 +22,7 @@ The repository is organized into 3 folders: `model`, `code`, `data`
 * `model`
 * `code`
 * `data`
+* `protocols`
 
 
 # Funding
