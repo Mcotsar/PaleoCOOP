@@ -2,7 +2,7 @@
 
 PaleoCOOP is an evolutionary theoretical Agent-Based Model to explore the effect of cooperation on dispersal under different climate constraints in two study sub-regions, the Altai and Tian Shan Mountains. 
 
-This repository contains data and scripts used in the following paper:
+This repository contains data and scripts used in the following preprint:
 
 * Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (submitted Nov 2023): The impact of cooperation under climate constraints: an Agent-Based Model for exploring Paleolithic behavioral adaptations in the Inner Asian Mountain Corridor. 
 
