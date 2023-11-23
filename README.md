@@ -9,7 +9,7 @@ This repository contains data and scripts used in the following paper:
 
 The agent-based model and the ODD protocol are available on OSF: 
 
-The repository is organized into 4 folders: `model`, `code`, `data`, `protocol`
+The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `protocol` , `scripts`
 
 # Requeriments
 
@@ -18,13 +18,18 @@ The repository is organized into 4 folders: `model`, `code`, `data`, `protocol`
 
 # Data structure
 
-* `model`
-* `code`
-* `data`
-* `protocols`
+* `PaleoCOOP_model`
+* `/data_csv` -> .csv file of the archaeological places using in the model
+* `protocol` -> ODD protocol
+* `scripts` -> scripts for the graphics (R program)
 
 
 # Funding
 The PALEOSILKROAD project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement n° 714842; PALAEOSILKROAD project)
+
+# Contact
+
+Please, contact me if you have any question, comments, feedback --> mcotsar [at] gmail.com
+
 # License
 CC-BY 4.0
