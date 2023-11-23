@@ -7,11 +7,11 @@ This repository contains data and scripts used in the following paper:
 * Coto-Sarmiento, M.; Namen, A.; Varis, A. and Iovita, R. (submitted Nov 2023): The impact of cooperation under climate constraints: an Agent-Based Model for exploring Paleolithic behavioral adaptations in the Inner Asian Mountain Corridor. 
 
 
-The agent-based model and the ODD protocol are available on OSF: 
+The agent-based model and the ODD protocol are available on OSF: https://doi.org/10.17605/OSF.IO/JM3ZY
 
 The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `protocol`, `scripts`
 
-** Please note that the article is a preprint and has not yet been peer-reviewed. Therefore, both the article and the model itself can change **
+**Please note that the article is a preprint and has not yet been peer-reviewed. Therefore, both the article and the model itself can change**
 
 # Requeriments
 
