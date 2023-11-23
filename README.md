@@ -11,7 +11,7 @@ The agent-based model and the ODD protocol are available on OSF:
 
 The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `protocol`, `scripts`
 
-** Please note that the article is a preprint and has not yet been peer-reviewed. Therefore, both the article and the model itself can change.
+** Please note that the article is a preprint and has not yet been peer-reviewed. Therefore, both the article and the model itself can change **
 
 # Requeriments
 
