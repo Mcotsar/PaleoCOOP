@@ -9,7 +9,9 @@ This repository contains data and scripts used in the following paper:
 
 The agent-based model and the ODD protocol are available on OSF: 
 
-The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `protocol` , `scripts`
+The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `protocol`, `scripts`
+
+** Please note that the article is a preprint and has not yet been peer-reviewed. Therefore, both the article and the model itself can change.
 
 # Requeriments
 
@@ -18,10 +20,12 @@ The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `prot
 
 # Data structure
 
-* `PaleoCOOP_model`
-* `/data_csv` -> .csv file of the archaeological places using in the model
-* `protocol` -> ODD protocol
-* `scripts` -> scripts for the graphics (R program)
+* `/PaleoCOOP_model` -> this folder includes:
+   * The NetLogo model
+   * `/data/maps` -> DEM and shapefiles for the model
+* `/data_csv` -> .csv file of the archaeological places used in the model
+* `/protocol` -> ODD protocol
+* `/scripts` -> scripts for the graphics (R program)
 
 
 # Funding
@@ -29,7 +33,7 @@ The PALEOSILKROAD project has received funding from the European Research Counci
 
 # Contact
 
-Please, contact me if you have any question, comments, feedback --> mcotsar [at] gmail.com
+Please, contact me if you have any questions, comments, or feedback --> mcotsar [at] gmail.com
 
 # License
 CC-BY 4.0
