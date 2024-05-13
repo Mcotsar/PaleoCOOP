@@ -171,8 +171,8 @@ to setup
 
   ;; The simulation can take a long time. It is recommended not to simulate the two breeds at the same time
 
-  ;setup-hominins                  ;; describe individuals in Tien Shan
-  setup-heminins                   ;; describe individuals in Altai
+  ;setup-hominins                   ;; describe individuals in Tien Shan
+  setup-heminins                  ;; describe individuals in Altai
   setup-places                     ;; start creating two atractor places in Tien Shan and Altai
 
 
@@ -456,7 +456,7 @@ to setup-hominins                                             ;; create individu
 
     setxy 46 42                                               ;; it could be any place choosen randomly. by setxy random-xcor random-ycor
     set shape "person"
-    set size 10                                               ;; set one by default
+    set size 1                                                ;; set one by default
     set body-temperature initial-body-temperature             ;; body temperature average of humans is 37ºC
     set age random maximum-age                                ;; average human age is 25
     setup-cooperation                                         ;; how humans start cooperate
@@ -472,7 +472,7 @@ to setup-heminins                                             ;; create individu
   create-heminins nHominins [
 
    set shape "person"
-   set size 10
+   set size 1
    setxy 414 297
    set age random maximum-age                                 ;; average human age is 25
    set body-temperature initial-body-temperature              ;; body temperature average of humans is 37ºC
@@ -494,7 +494,7 @@ to setup-places                                              ;; random attractor
 
   make-place 1 111 69 red
   make-place 1 246 91 red
-  make-place 1 57  93 red
+  make-place 1 57  93  red
   make-place 1 431 217 sky
   make-place 1 463 273 sky
   make-place 1 365 259 sky
@@ -549,6 +549,7 @@ to setup-cooperation
   ]
 
 end
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -775,6 +776,7 @@ to-report get-deltap-altai
 end
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;; CHECK ENVIROMMENTS AND POSSIBLE SCENARIOS ;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -786,6 +788,7 @@ to check-scenarios
   if scenario = "Scenario2" [Scenario2] ;; scenario with coldest temperature condition (glacial)
   if scenario = "Scenario3" [Scenario3] ;; scenario with coldest temperature condition (interglacial)
   if scenario = "Scenario4" [Scenario4] ;; scenario with warmest temperature (interglacial)
+
 
 end
 
@@ -918,6 +921,7 @@ end
 ;; scenario with coldest temperature condition (glacial)
 
 
+;; hominins will learn slower due to the climate effect
 ;; hominins will spend more energy
 ;; hominins will consume more resources than other scenarios (no cooperative will consume more)
 
@@ -927,7 +931,7 @@ end
 
 to Scenario2 ;; glacial coldest condition
 
-  if random-float 1.0 <= learning-rate
+  if random-float 1.0 <= learning-rate * 0.80 ;; 20 % less learning bc it costs more
      [check-scenario-2]
 
 end
@@ -1040,13 +1044,15 @@ end
 
 ;; scenario with coldest temperature condition (interglacial)
 
+
+;; hominins will learn slower due to the climate effect
 ;; hominins will spend more energy
 ;; hominins will consume more resources than other scenarios (no cooperative will consume more)
 
 
 to Scenario3 ;; glacial coldest condition
 
-  if random-float 1.0 <= learning-rate
+  if random-float 1.0 <= learning-rate * 0.80 ;; 20 % less learning bc it costs more estaban antes en 0.85
      [check-scenario-3]
 
 end
@@ -1262,6 +1268,8 @@ to check-scenario4
     ]
   ]
 
+
+
 end
 
 
@@ -1285,42 +1293,38 @@ to consume-energy
 
   if scenario = "Scenario1" [
 
-    ask hominins [
-
-      ifelse attractors? = true [
-        set risk risk - 0.1
-        ifelse risk <= human-risk [
-        set energy energy - 0.01 ]
-        [set energy energy - 0.1 ]
+    ask hominins with [attractors? = true] [
+      set risk risk - 0.1
+      ifelse risk <= human-risk [
+       set energy energy - 0.01 ]
+      [set energy energy - 0.1 ]
     ]
-    [
+    ask hominins with [attractors? = false]
+      [
         set energy energy - 0.1
         set risk risk + 0.1
         if risk > 80 [
         set energy energy - 0.12
         ]
       ]
+
+
+    ask heminins with [attractors? = true] [
+      set risk risk - 0.15
+      ifelse risk <= human-risk [
+      set energy energy - 0.015 ]
+      [set energy energy - 0.15 ]
     ]
-
-
-    ask heminins [
-
-      ifelse attractors? = true [
-        set risk risk - 0.15
-        ifelse risk <= human-risk [
-        set energy energy - 0.015 ]
-        [set energy energy - 0.15 ]
-    ]
-    [  ;; Altai is more extreme so humans spend more energy and the perception of the risk is higher than Tien Shan
+    ask heminins with [attractors? = false]                          ;; Altai is more extreme so humans spend more energy and the perception of the risk is higher than Tien Shan
+      [
         set energy energy - 0.15
         set risk risk + 0.15
         if risk > 80 [
         set energy energy - 0.20
         ]
       ]
-    ]
+  ]
 
-   ]
 
 
   ;;;; CONSUME ENERGY IN SCENARIO 2 ;;;;
@@ -1328,55 +1332,17 @@ to consume-energy
 
   if scenario = "Scenario2" [
 
-    ask hominins [
-
-      ifelse attractors? = true [
-       set risk risk - 0.2
-       ifelse risk <= human-risk [
+    ask hominins with [attractors? = true] [
+      set risk risk - 0.2
+      ifelse risk <= human-risk [
         set energy energy - 0.02
-      ][set energy energy - 0.15]
-    ]
-    [
-        set energy energy - 0.2
-        set risk risk + 0.4
-        if risk > 80 [
-        set energy energy - 0.25
-        ]
+       ;ask hominins with [cooperate? = false] [set energy energy - 0.002] ;; no cooperative consume more energy
+       ;ask hominins with [cooperate? = true] [set energy energy - 0.001]
+      ][
+        set energy energy - 0.15
       ]
     ]
-
-
-    ask heminins [
-        ifelse attractors? = true [
-          set risk risk - 0.3
-          ifelse risk <= human-risk [
-          set energy energy - 0.025
-          ][set energy energy - 0.20]
-          ]
-          [
-        set energy energy - 0.3
-        set risk risk + 0.5
-        if risk > 80 [
-        set energy energy - 0.30
-        ]
-      ]
-    ]
-
-   ]
-
-
-   ;;;; CONSUME ENERGY IN SCENARIO 3 ;;;;
-
-   if scenario = "Scenario3" [
-
-     ask hominins [
-
-      ifelse attractors? = true [
-        set risk risk - 0.2
-        ifelse risk <= human-risk [
-        set energy energy - 0.02
-      ][set energy energy - 0.15]
-    ]
+    ask hominins with [attractors? = false]
       [
         set energy energy - 0.2
         set risk risk + 0.4
@@ -1384,26 +1350,70 @@ to consume-energy
         set energy energy - 0.25
         ]
       ]
-    ]
 
-      ask heminins [
 
-        ifelse attractors? = true [
-          set risk risk - 0.3
-          ifelse risk <= human-risk [
-          set energy energy - 0.025
-      ][  set energy energy - 0.20]
-    ]
-        [
-         set energy energy - 0.3
-         set risk risk + 0.5
-         if risk > 80 [
-         set energy energy - 0.30
-        ]
+    ask heminins with [attractors? = true] [
+      set risk risk - 0.3
+      ifelse risk <= human-risk [
+       set energy energy - 0.025
+      ][
+        set energy energy - 0.20
       ]
     ]
 
-   ]
+    ask heminins with [attractors? = false] [
+        set energy energy - 0.3
+        set risk risk + 0.5
+        if risk > 80 [
+        set energy energy - 0.30
+        ]
+      ]
+
+  ]
+
+   ;;;; CONSUME ENERGY IN SCENARIO 3 ;;;;
+
+   if scenario = "Scenario3" [
+
+    ask hominins with [attractors? = true] [
+      set risk risk - 0.2
+      ifelse risk <= human-risk [
+      set energy energy - 0.02
+       ;ask hominins with [cooperate? = false] [set energy energy + 0.25] ;; no cooperative consume more energy
+       ;ask hominins with [cooperate? = true] [set energy energy + 0.2]
+      ][
+        set energy energy - 0.15
+
+      ]
+    ]
+    ask hominins with [attractors? = false]
+      [
+        set energy energy - 0.2
+        set risk risk + 0.4
+        if risk > 80 [
+        set energy energy - 0.25
+
+        ]
+      ]
+
+      ask heminins with [attractors? = true] [
+      set risk risk - 0.3
+      ifelse risk <= human-risk [
+       set energy energy - 0.025
+      ][
+        set energy energy - 0.20
+      ]
+    ]
+
+    ask heminins with [attractors? = false] [
+        set energy energy - 0.3
+        set risk risk + 0.5
+        if risk > 80 [
+        set energy energy - 0.30
+        ]
+      ]
+
+  ]
 
 
  ;;;; CONSUME ENERGY IN SCENARIO 4 ;;;;
@@ -1412,40 +1422,45 @@ to consume-energy
 
   if scenario = "Scenario4" [
 
-      ask hominins [
-
-       ifelse attractors? = true [
-        set risk risk - 0.1
-        ifelse risk <= human-risk [
-        set energy energy - 0.01
-      ][ set energy energy - 0.1]
-    ] [
-        set energy energy - 0.11
-        set risk risk + 0.1
-        if risk > 80 [
-        set energy energy - 0.12
-
-        ]
-      ]
-    ]
-
-     ask heminins [
-      ifelse attractors? = true [
-        set risk risk - 0.1
-        ifelse risk <= human-risk [
-        set energy energy - 0.01
-      ][ set energy energy - 0.1]
+      ask hominins with [attractors? = true] [
+      set risk risk - 0.1
+      ifelse risk <= human-risk [
+       set energy energy - 0.01
       ][
+        set energy energy - 0.1
+
+      ]
+    ]
+    ask hominins with [attractors? = false]
+      [
         set energy energy - 0.11
         set risk risk + 0.1
         if risk > 80 [
         set energy energy - 0.12
+
         ]
       ]
+
+     ask heminins with [attractors? = true] [
+      set risk risk - 0.1
+      ifelse risk <= human-risk [
+       set energy energy - 0.01
+      ][
+        set energy energy - 0.1
+
+      ]
+    ]
+    ask heminins with [attractors? = false]
+      [
+        set energy energy - 0.11
+        set risk risk + 0.1
+        if risk > 80 [
+        set energy energy - 0.12
+
+        ]
       ]
 
-    ]
-
+  ]
 
 
 
@@ -1460,6 +1475,7 @@ to consume-energy
     if energy >= max-energy [set energy max-energy]
     if energy <= 0 [set death-starvation death-starvation + 1 die]                                        ;; no energy of course die
   ]
+
 
 
 end
@@ -1798,6 +1814,9 @@ to update-resources
   ]
 
 
+
+
+
 end
 
 
@@ -1941,6 +1960,9 @@ end
 
 to move-humans ;; you can choose between two different random walks: pearson one or levy
 
+
+  if (movements = "random walk") [
+
     ask hominins [
 
     set heading random-float 360
@@ -1951,13 +1973,41 @@ to move-humans ;; you can choose between two different random walks: pearson one
   ]
 
 
+
     ask heminins [
     set heading random-float 360
     if patch-ahead hominin-speed != nobody and
       [water] of patch-ahead hominin-speed = false
-      [ forward hominin-speed ]
-  ]
+      [ forward hominin-speed ]]
     ;move-to one-of patches with [water = false]
+    ]
+
+
+   if (movements = "lèvy walk") [
+
+     ask hominins [
+
+     set heading random-float 360
+
+     let levy-step levy-min-step * (random-float 1) ^ (-1 / levy-alpha)
+     ;let alpha-walk 2 ;estaba por defecto 1.5 value alpha where the steps are + shorter - larger
+     ;let minstep 0.2
+     if patch-ahead levy-step != nobody and
+      [water] of patch-ahead levy-step = false
+      [fd levy-step]
+
+     ;fd minstep * (random-float 1) ^ (-1 / alpha-walk)
+     ]
+
+    ask heminins [
+     set heading random-float 360
+
+     let levy-step levy-min-step * (random-float 1) ^ (-1 / levy-alpha)
+     if patch-ahead levy-step != nobody and
+      [water] of patch-ahead levy-step = false
+      [fd levy-step]
+     ]
+    ]
 
 end
 
@@ -2091,265 +2141,6 @@ to go
   tick
 
 end
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;                                    NOTES                                                                      ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-;to move-humans ;; you can choose between two different random walks: pearson one or levy
-;
-;
-;  if (movements = "random walk") [
-;
-;    ask hominins [
-;
-;    set heading random-float 360
-;    ;rt random 360
-;    if patch-ahead hominin-speed != nobody and
-;      [water] of patch-ahead hominin-speed = false
-;      [ forward hominin-speed ]
-;  ]
-;
-;
-;
-;    ask heminins [
-;    set heading random-float 360
-;    if patch-ahead hominin-speed != nobody and
-;      [water] of patch-ahead hominin-speed = false
-;      [ forward hominin-speed ]]
-;    ;move-to one-of patches with [water = false]
-;    ]
-;
-;
-;
-;   if (movements = "lèvy walk") [
-;
-;     ask hominins [
-;
-;     set heading random-float 360
-;
-;     let levy-step levy-min-step * (random-float 1) ^ (-1 / levy-alpha)
-;     ;let alpha-walk 2 ;estaba por defecto 1.5 value alpha where the steps are + shorter - larger
-;     ;let minstep 0.2
-;     if patch-ahead levy-step != nobody and
-;      [water] of patch-ahead levy-step = false
-;      [fd levy-step]
-;
-;     ;fd minstep * (random-float 1) ^ (-1 / alpha-walk)
-;     ]
-;
-;    ask heminins [
-;     set heading random-float 360
-;
-;     let levy-step levy-min-step * (random-float 1) ^ (-1 / levy-alpha)
-;     if patch-ahead levy-step != nobody and
-;      [water] of patch-ahead levy-step = false
-;      [fd levy-step]
-;     ]
-;    ]
-;
-;end
-
-
-
-;to consume-energy
-;
-;  ;; energy 1% = 0.01 y 0.1% = 0.001
-;  ;; individuals consume energy differently when they are close to attractors places (less energy) and they are far from them (more energy)
-;
-;
-; ;;;; CONSUME ENERGY IN SCENARIO 1 ;;;;
-;
-;  if scenario = "Scenario1" [
-;
-;    ask hominins with [attractors? = true] [
-;      set risk risk - 0.1
-;      ifelse risk <= human-risk [
-;       set energy energy - 0.01 ]
-;      [set energy energy - 0.1 ]
-;    ]
-;    ask hominins with [attractors? = false]
-;      [
-;        set energy energy - 0.1
-;        set risk risk + 0.1
-;        if risk > 80 [
-;        set energy energy - 0.12
-;        ]
-;      ]
-;
-;
-;    ask heminins with [attractors? = true] [
-;      set risk risk - 0.15
-;      ifelse risk <= human-risk [
-;      set energy energy - 0.015 ]
-;      [set energy energy - 0.15 ]
-;    ]
-;    ask heminins with [attractors? = false]                          ;; Altai is more extreme so humans spend more energy and the perception of the risk is higher than Tien Shan
-;      [
-;        set energy energy - 0.15
-;        set risk risk + 0.15
-;        if risk > 80 [
-;        set energy energy - 0.20
-;        ]
-;      ]
-;  ]
-
-
-
-  ;;;; CONSUME ENERGY IN SCENARIO 2 ;;;;
-
-
-;  if scenario = "Scenario2" [
-;
-;    ask hominins with [attractors? = true] [
-;      set risk risk - 0.2
-;      ifelse risk <= human-risk [
-;        set energy energy - 0.02
-;       ;ask hominins with [cooperate? = false] [set energy energy - 0.002] ;; no cooperative consume more energy
-;       ;ask hominins with [cooperate? = true] [set energy energy - 0.001]
-;      ][
-;        set energy energy - 0.15
-;      ]
-;    ]
-;    ask hominins with [attractors? = false]
-;      [
-;        set energy energy - 0.2
-;        set risk risk + 0.4
-;        if risk > 80 [
-;        set energy energy - 0.25
-;        ]
-;      ]
-;
-;
-;    ask heminins with [attractors? = true] [
-;      set risk risk - 0.3
-;      ifelse risk <= human-risk [
-;       set energy energy - 0.025
-;      ][
-;        set energy energy - 0.20
-;      ]
-;    ]
-;
-;    ask heminins with [attractors? = false] [
-;        set energy energy - 0.3
-;        set risk risk + 0.5
-;        if risk > 80 [
-;        set energy energy - 0.30
-;        ]
-;      ]
-;
-;  ]
-;
-;   ;;;; CONSUME ENERGY IN SCENARIO 3 ;;;;
-;
-;   if scenario = "Scenario3" [
-;
-;    ask hominins with [attractors? = true] [
-;      set risk risk - 0.2
-;      ifelse risk <= human-risk [
-;      set energy energy - 0.02
-;       ;ask hominins with [cooperate? = false] [set energy energy + 0.25] ;; no cooperative consume more energy
-;       ;ask hominins with [cooperate? = true] [set energy energy + 0.2]
-;      ][
-;        set energy energy - 0.15
-;
-;      ]
-;    ]
-;    ask hominins with [attractors? = false]
-;      [
-;        set energy energy - 0.2
-;        set risk risk + 0.4
-;        if risk > 80 [
-;        set energy energy - 0.25
-;
-;        ]
-;      ]
-;
-;      ask heminins with [attractors? = true] [
-;      set risk risk - 0.3
-;      ifelse risk <= human-risk [
-;       set energy energy - 0.025
-;      ][
-;        set energy energy - 0.20
-;      ]
-;    ]
-;
-;    ask heminins with [attractors? = false] [
-;        set energy energy - 0.3
-;        set risk risk + 0.5
-;        if risk > 80 [
-;        set energy energy - 0.30
-;        ]
-;      ]
-;
-;  ]
-;
-;
-; ;;;; CONSUME ENERGY IN SCENARIO 4 ;;;;
-;
-;  ;; temperature between interglacial and glacial are a bit similar bt regions (Altai and Tien Shan) so we include the same energy bt hominins and heminins bc the variation bt temperatures is not a lot
-;
-;  if scenario = "Scenario4" [
-;
-;      ask hominins with [attractors? = true] [
-;      set risk risk - 0.1
-;      ifelse risk <= human-risk [
-;       set energy energy - 0.01
-;      ][
-;        set energy energy - 0.1
-;
-;      ]
-;    ]
-;    ask hominins with [attractors? = false]
-;      [
-;        set energy energy - 0.11
-;        set risk risk + 0.1
-;        if risk > 80 [
-;        set energy energy - 0.12
-;
-;        ]
-;      ]
-;
-;     ask heminins with [attractors? = true] [
-;      set risk risk - 0.1
-;      ifelse risk <= human-risk [
-;       set energy energy - 0.01
-;      ][
-;        set energy energy - 0.1
-;
-;      ]
-;    ]
-;    ask heminins with [attractors? = false]
-;      [
-;        set energy energy - 0.11
-;        set risk risk + 0.1
-;        if risk > 80 [
-;        set energy energy - 0.12
-;
-;        ]
-;      ]
-;
-;  ]
-;
-;
-;  ;; When humans have not energy they die
-;
-;  ask hominins [
-;    if energy >= max-energy [set energy max-energy]                                        ;; they cannot exceed the limit of energy using max-energy slider
-;    if energy <= 0 [set death-starvation death-starvation + 1 die]                         ;; no energy of course die
-;  ]
-;
-;  ask heminins [
-;    if energy >= max-energy [set energy max-energy]
-;    if energy <= 0 [set death-starvation death-starvation + 1 die]                                        ;; no energy of course die
-;  ]
-;
-;
-;end
 @#$#@#$#@
 GRAPHICS-WINDOW
 593
@@ -2783,6 +2574,16 @@ max-energy
 NIL
 HORIZONTAL
 
+CHOOSER
+20
+706
+160
+751
+movements
+movements
+"random walk" "lèvy walk"
+0
+
 TEXTBOX
 243
 156
@@ -2801,7 +2602,7 @@ CHOOSER
 scenario
 scenario
 "Scenario1" "Scenario2" "Scenario3" "Scenario4"
-0
+3
 
 TEXTBOX
 1248
@@ -2877,6 +2678,16 @@ prob-cooperation
 1
 NIL
 HORIZONTAL
+
+TEXTBOX
+12
+667
+274
+696
+# Hominins movements (Random and Levy Walk)
+12
+0.0
+1
 
 TEXTBOX
 27
