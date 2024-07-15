@@ -33,7 +33,6 @@ extensions [
 
 globals [
 
-
   data
   ;; qgis map
   basemap-dataset                      ;; map qgis used with QGIS extension
@@ -46,12 +45,6 @@ globals [
   lakes-dataset                        ;; dataset of lakes
   patches-region-tienshan              ;; Patches of the region Tien Shan
   patches-region-altai                 ;; Patches of the region Altai
-
-  ; seasonality
-
-  current-month                       ;; check the seasonality and the weather
-  total-months
-
 
   ; walk
 
@@ -164,26 +157,9 @@ to setup
   show (word "Simulation " behaviorspace-run-number " started at " date-and-time)
   if maxTimeSteps = "" [set maxTimeSteps 0]
 
-  random-seed seed
 
-  set current-month 0
-  set total-months 0
-
-  ;; setup-constants (former magic numbers/hardcoded values)
-
-  set initial-body-temperature 37                      ;; body temperature average of humans is 37ºC
-  set maximum-age 50 * 12                              ;; max age random 50
-  set minimum-reproduction-age 12 * 12                 ;; min reproduction rate is 12
-
-  set levy-alpha 2                                     ;; by default 1.5 value alpha where the steps are + shorter - larger
-  set levy-min-step 0.2
-
-  set resource-decrease-rate 0.1
-  set resource-recovery-rate 1
-
-  set radius-for-strategy 3                            ;; this is the radius of strategy used for social pressure condition
-
-  setup-parameters                 ;; setup all the parameters for the evolutionary equation
+  setup-constants                  ;; setup constants (former magic numbers/hardcoded values)
+  setup-parameters                 ;; setup all the parameters
 
   setup-maps                       ;; setup the map with rivers and lakes and real points
   display-map
@@ -212,9 +188,30 @@ to setup
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+to setup-constants
+
+  set initial-body-temperature 37                      ;; body temperature average of humans is 37ºC
+  set maximum-age 50 * 12                              ;; max age random 50
+  set minimum-reproduction-age 12 * 12                 ;; min reproduction rate is 12
+
+  set levy-alpha 2                                     ;; by default 1.5 value alpha where the steps are + shorter - larger
+  set levy-min-step 0.2
+
+  set resource-decrease-rate 0.1
+  set resource-recovery-rate 1
+
+
+  set radius-for-strategy 3                            ;; this is the radius of strategy used for social pressure condition
+
+
+end
+
 to setup-parameters
 
-  set prob-coop prob-cooperation                       ;; probability of cooperation
+
+  random-seed seed
+
+  set prob-coop prob-cooperation
   set cost cost-cooperation                            ;; cost of cooperation. Use slider to change
   set punishment punishment-cooperation                ;; punishment cooperation. Use slider to change
   set no-coop prob-nocoop                              ;; probability individuals do not cooperate
@@ -553,6 +550,12 @@ to setup-initial-cooperation
 
 
 
+
+
+
+
+
+
  ask hominins [
       ifelse (random-float 1.0 < prob-coop) [
       set color green
@@ -672,47 +675,7 @@ ask patches [                          ;; altai resources
 
 end
 
-to update-temperature
 
-  ;; temperature is changing every three months. Remember the simulation is split by two enviromments: Tien Shan and Altai with different temperatures
-
-  set current-month current-month + 1
-   if current-month = 13 [
-    set total-months total-months + 12
-    set current-month 1 ; Start again
-  ]
-  ;print (word "Current Month: " current-month)
-
-
-  if scenario = "Scenario1" [
-
-  ;; Mean of the total of the annual temperature in Cº for glacial and interglacial scenario
-  if current-month = 1 or current-month = 2 or current-month = 12 [
-    ask patches [
-      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
-        [ set climate-temperature 6 ]               ;; TienShan study area
-        [ set climate-temperature -4 ]              ;; Altai study area
-    ]
-  ]
-]
-
-
-
-
-   ;if current-month = 1 or current-month = 2 or current-month = 12 [set season "Winter"]
-   ;if current-month = 3 or current-month = 4 or current-month = 5  [set season "Spring"]
-   ;if current-month = 6 or current-month = 7 or current-month = 8  [set season "Summer"]
-   ;if current-month = 9 or current-month = 10 or current-month = 11 [set season "Autumn"]
-
-
-
-
-
-
-
-
-
-end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;; SELECT SOCIAL STRATEGIES and COOPERATION ;;;;;;;;;;;
@@ -852,7 +815,6 @@ end
 ;; CORREGIR ESTO QUE ESTÁ MAL
 to check-scenarios
 
-
   if scenario = "Scenario1" [Scenario1] ;; scenario with annual temperature conditions (glacial and interglacial)
   if scenario = "Scenario2" [Scenario2] ;; scenario with coldest temperature condition (glacial)
   if scenario = "Scenario3" [Scenario3] ;; scenario with coldest temperature condition (interglacial)
@@ -871,15 +833,12 @@ end
 
 to Scenario1  ;; Scenario with annual temp average
 
-
    if random-float 1.0 <= learning-rate                                            ;; hominins need to learn the path to arrive to attractor places
     [check-scenario-1]
 
 end
 
-
 to check-scenario-1
-
 
    ;; scenario 1 TIEN SHAN ;;
 
@@ -1100,6 +1059,9 @@ to check-scenario-2
       ]
     ]
   ]
+
+
+
 
 end
 
@@ -1516,6 +1478,7 @@ to consume-energy
       ]
 
     ]
+
 
 
 
@@ -2142,7 +2105,6 @@ to go
   if vid:recorder-status = "recording" [ vid:record-view ]
 
   update-resources                   ;; update all the resources
-  update-temperature                 ;; update the temperature for each scenario
   move-humans                        ;; move hominins
   get-older-and-reproduce            ;; getting older and reproduce
   check-scenarios                    ;; check four possible scenarios
@@ -3310,17 +3272,6 @@ PENS
 "too-old" 1.0 0 -10899396 true "" "if plots-on? [plot death-old]"
 "starvation" 1.0 0 -2674135 true "" "if plots-on? [plot death-starvation]"
 
-MONITOR
-401
-314
-494
-359
-NIL
-current-month
-17
-1
-11
-
 @#$#@#$#@
 ## WHAT IS IT?
 
@@ -3338,8 +3289,8 @@ So, for the model, we create three stages:
 
 **2.** Humans seek a location with resources and learn to navigate there. Upon arrival, they settle and begin consuming available resources.
 
-**3.** When resources are not optimal, they need to move and look for new optimal resources. 
-                              
+**3.** As resources deplete, they must seek new locations to replenish their supplies.
+
 
 
 ## HOW TO USE IT
