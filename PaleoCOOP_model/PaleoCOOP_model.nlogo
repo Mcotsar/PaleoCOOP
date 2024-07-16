@@ -687,29 +687,112 @@ to update-temperature
   if scenario = "Scenario1" [
 
   ;; Mean of the total of the annual temperature in Cº for glacial and interglacial scenario
-  if current-month = 1 or current-month = 2 or current-month = 12 [
+  if current-month = 1 or current-month = 2 or current-month = 12 [     ;; winter time
     ask patches [
       ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
-        [ set climate-temperature 6 ]               ;; TienShan study area
-        [ set climate-temperature -4 ]              ;; Altai study area
+        [ set climate-temperature -0.98 ]           ;; TienShan study area
+        [ set climate-temperature -16.4 ]           ;; Altai study area
+    ]
+  ]
+
+    if current-month = 3 or current-month = 4 or current-month = 5 [    ;; spring time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 11.26 ]           ;; TienShan study area
+        [ set climate-temperature 2.60 ]            ;; Altai study area
+    ]
+  ]
+
+    if current-month = 6 or current-month = 7 or current-month = 8 [    ;; summer time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 24.42 ]           ;; TienShan study area
+        [ set climate-temperature 19.37 ]           ;; Altai study area
+    ]
+  ]
+
+    if current-month = 9 or current-month = 10 or current-month = 11 [   ;; autunn time
+       ask patches [
+       ifelse (pxcor <= 266.5)                  ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 12.35 ]           ;; TienShan study area
+        [ set climate-temperature 3.97 ]           ;; Altai study area
     ]
   ]
 ]
 
+  if scenario = "Scenario4" [
+
+    if current-month = 1 or current-month = 2 or current-month = 12 [     ;; winter time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 3.67 ]            ;; TienShan study area
+        [ set climate-temperature -10.05 ]          ;; Altai study area
+    ]
+  ]
+
+    if current-month = 3 or current-month = 4 or current-month = 5 [    ;; spring time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 16.64 ]           ;; TienShan study area
+        [ set climate-temperature 9.83 ]            ;; Altai study area
+    ]
+  ]
+
+     if current-month = 6 or current-month = 7 or current-month = 8 [    ;; summer time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 31.59 ]           ;; TienShan study area
+        [ set climate-temperature 27.18 ]                ;; Altai study area
+    ]
+  ]
+
+    if current-month = 9 or current-month = 10 or current-month = 11 [   ;;autunn time
+
+        ask patches [
+        ifelse (pxcor <= 266.5)                     ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 18.76 ]           ;; TienShan study area
+        [ set climate-temperature 10.88 ]           ;; Altai study area
+    ]
+   ]
+  ]
 
 
-
-   ;if current-month = 1 or current-month = 2 or current-month = 12 [set season "Winter"]
-   ;if current-month = 3 or current-month = 4 or current-month = 5  [set season "Spring"]
-   ;if current-month = 6 or current-month = 7 or current-month = 8  [set season "Summer"]
-   ;if current-month = 9 or current-month = 10 or current-month = 11 [set season "Autumn"]
+  if scenario = "Scenario2" or scenario = "Scenario3" [
 
 
+    if current-month = 1 or current-month = 2 or current-month = 12 [     ;; winter time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature -7 ]              ;; TienShan study area
+        [ set climate-temperature -20 ]             ;; Altai study area
+    ]
+  ]
 
+    if current-month = 3 or current-month = 4 or current-month = 5 [    ;; spring time
+      ask patches [
+      ifelse (pxcor <= 266.5)                        ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 7.29 ]             ;; TienShan study area
+        [ set climate-temperature -4.42 ]            ;; Altai study area
+    ]
+  ]
 
+    if current-month = 6 or current-month = 7 or current-month = 8 [    ;; summer time
+      ask patches [
+      ifelse (pxcor <= 266.5)                       ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature  19.20 ]                ;; TienShan study area
+        [ set climate-temperature  11.54 ]                ;; Altai study area
+    ]
+  ]
 
+      if current-month = 9 or current-month = 10 or current-month = 11 [   ;;autunn time
 
-
+        ask patches [
+        ifelse (pxcor <= 266.5)                     ;; half of the world with TianShan temperature, half of the world with Altai, based on BioClim
+        [ set climate-temperature 4.95 ]           ;; TienShan study area
+        [ set climate-temperature -2.92 ]           ;; Altai study area
+    ]
+   ]
+  ]
 
 
 end
@@ -1528,7 +1611,7 @@ to consume-energy
 
   ask heminins [
     if energy >= max-energy [set energy max-energy]
-    if energy <= 0 [set death-starvation death-starvation + 1 die]                                        ;; no energy of course die
+    if energy <= 0 [set death-starvation death-starvation + 1 die]                         ;; no energy of course die
   ]
 
 
@@ -1826,7 +1909,6 @@ to update-resources
               forward 120
             ]
   ]
-
 
 
 
@@ -2872,7 +2954,7 @@ CHOOSER
 scenario
 scenario
 "Scenario1" "Scenario2" "Scenario3" "Scenario4"
-0
+2
 
 TEXTBOX
 1248
