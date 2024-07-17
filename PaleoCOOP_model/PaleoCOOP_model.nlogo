@@ -197,8 +197,8 @@ to setup
 
   ;; The simulation can take a long time. It is recommended not to simulate the two breeds at the same time
 
-  ;setup-hominins                  ;; describe individuals in Tien Shan
-  setup-heminins                   ;; describe individuals in Altai
+  setup-hominins                  ;; describe individuals in Tien Shan
+  ;setup-heminins                   ;; describe individuals in Altai
   setup-places                     ;; start creating two atractor places in Tien Shan and Altai
 
 
@@ -533,8 +533,24 @@ to setup-initial-cooperation
 
 
   let num-cooperators round (prob-coop * count heminins)
+  let num-cooperators-hominins round (prob-coop * count hominins)
   let cooperators-count 0
   let non-coop 0
+
+   ask hominins [
+    ifelse (cooperators-count < num-cooperators-hominins) [
+      set color green
+      set cooperate? true
+      set traits 1
+      set cooperators-count cooperators-count + 1
+    ] [
+      set color red
+      set cooperate? false
+      set traits 0
+      set non-coop non-coop + 1
+
+    ]
+  ]
 
   ask heminins [
     ifelse (cooperators-count < num-cooperators) [
@@ -553,18 +569,18 @@ to setup-initial-cooperation
 
 
 
- ask hominins [
-      ifelse (random-float 1.0 < prob-coop) [
-      set color green
-      set cooperate? true
-      set traits 1
-    ] [
-      set color red
-      set cooperate? false
-      set traits 0
-    ]
-  ]
-
+; ask hominins [
+;      ifelse (random-float 1.0 < prob-coop) [
+;      set color green
+;      set cooperate? true
+;      set traits 1
+;    ] [
+;      set color red
+;      set cooperate? false
+;      set traits 0
+;    ]
+;  ]
+;
 
 ;  ask heminins [
 ;      ifelse (random-float 1.0 < prob-coop) [
@@ -3025,7 +3041,7 @@ prob-cooperation
 prob-cooperation
 0
 1.0
-0.2
+0.5
 0.01
 1
 NIL
