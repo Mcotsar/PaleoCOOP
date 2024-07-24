@@ -197,8 +197,8 @@ to setup
 
   ;; The simulation can take a long time. It is recommended not to simulate the two breeds at the same time
 
-  setup-hominins                  ;; describe individuals in Tien Shan
-  ;setup-heminins                   ;; describe individuals in Altai
+  ;setup-hominins                  ;; describe individuals in Tien Shan
+  setup-heminins                   ;; describe individuals in Altai
   setup-places                     ;; start creating two atractor places in Tien Shan and Altai
 
 
@@ -691,6 +691,12 @@ end
 to update-temperature
 
   ;; temperature is changing every three months. Remember the simulation is split by two enviromments: Tien Shan and Altai with different temperatures
+  ;; Temperature taken from Bioclimatic variables for every month: https://www.worldclim.org/data/worldclim21.html#
+  ;; To incorporate seasonality, we calculate the total mean of the seasonality for the result of the each month.
+  ;; For example: Winter: december + january + february = total mean for each month.
+  ;; For Tian Shan: tuttybulaq 1 and tuttybulaq 1 temperatures
+  ;; For Altai: Alybai 1 temperatures
+
 
   set current-month current-month + 1
    if current-month = 13 [
@@ -3173,7 +3179,7 @@ alpha
 alpha
 0
 1
-0.5
+0.8
 0.01
 1
 NIL
@@ -3188,7 +3194,7 @@ cost-cooperation
 cost-cooperation
 0
 100
-20.0
+10.0
 1
 1
 NIL
@@ -3842,896 +3848,6 @@ NetLogo 6.2.2
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="Scenario_1_prob50_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario1&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_1_prob80_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario1&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_4_prob50_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario4&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_4_prob80_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario4&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_2_prob80_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario2&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_2_prob50_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario2&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_3_prob80_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario3&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_3_prob50_tienshan_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count hominins with [cooperate? = true]</metric>
-    <metric>count hominins with [cooperate? = false]</metric>
-    <metric>get-deltap-tienshan</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="plots-on?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="punishment-cooperation">
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="max-energy">
-      <value value="100"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-temperature-altai?">
-      <value value="true"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-tienshan?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario3&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_1_prob50_altai_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count heminins with [cooperate? = true]</metric>
-    <metric>count heminins with [cooperate? = false]</metric>
-    <metric>get-deltap-altai</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario1&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_1_prob80_altai_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <metric>count heminins with [cooperate? = true]</metric>
-    <metric>count heminins with [cooperate? = false]</metric>
-    <metric>get-deltap-altai</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario1&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_2_prob50_altai_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <exitCondition>not any? heminins</exitCondition>
-    <metric>count heminins with [cooperate? = true]</metric>
-    <metric>count heminins with [cooperate? = false]</metric>
-    <metric>get-deltap-altai</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario2&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
-  <experiment name="Scenario_2_prob80_altai_test" repetitions="1" runMetricsEveryStep="true">
-    <setup>setup</setup>
-    <go>go</go>
-    <timeLimit steps="1200"/>
-    <exitCondition>not any? heminins</exitCondition>
-    <metric>count heminins with [cooperate? = true]</metric>
-    <metric>count heminins with [cooperate? = false]</metric>
-    <metric>get-deltap-altai</metric>
-    <enumeratedValueSet variable="world-max-dim">
-      <value value="533"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-resources?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="show-energy-altai?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-nocoop">
-      <value value="0.001"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="patch-size-km">
-      <value value="0.5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="alpha">
-      <value value="0.2"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="cost-cooperation">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="seed">
-      <value value="1000"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="age?">
-      <value value="false"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="human-risk">
-      <value value="5"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="mountain-elev">
-      <value value="1700"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="maxTimeSteps">
-      <value value="1200"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nHominins">
-      <value value="10"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="hominin-speed">
-      <value value="0.75"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="prob-cooperation">
-      <value value="0.8"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="scenario">
-      <value value="&quot;Scenario2&quot;"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="learning-rate">
-      <value value="1"/>
-    </enumeratedValueSet>
-  </experiment>
   <experiment name="Scenario1_probcoop_TienShan" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
@@ -5172,7 +4288,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario1_alpha_TienShan" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario1_alpha_TienShan" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? hominins</exitCondition>
@@ -5186,15 +4302,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5218,6 +4333,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5228,7 +4344,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario2_alpha_TienShan" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario2_alpha_TienShan" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? hominins</exitCondition>
@@ -5242,15 +4358,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5274,6 +4389,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5284,7 +4400,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario3_alpha_TienShan" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario3_alpha_TienShan" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? hominins</exitCondition>
@@ -5298,15 +4414,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5330,6 +4445,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5340,7 +4456,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario4_alpha_TienShan" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario4_alpha_TienShan" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? hominins</exitCondition>
@@ -5354,15 +4470,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5386,6 +4501,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5396,7 +4512,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario1_alpha_Altai" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario1_alpha_Altai" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? heminins</exitCondition>
@@ -5410,15 +4526,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5442,6 +4557,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5452,7 +4568,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario2_alpha_Altai" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario2_alpha_Altai" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? heminins</exitCondition>
@@ -5466,15 +4582,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5498,6 +4613,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5508,7 +4624,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario3_alpha_Altai" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario3_alpha_Altai" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? heminins</exitCondition>
@@ -5522,15 +4638,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5554,6 +4669,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5564,7 +4680,7 @@ NetLogo 6.2.2
       <value value="1"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="Scenario4_alpha_Altai" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true">
+  <experiment name="Scenario4_alpha_Altai" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>not any? heminins</exitCondition>
@@ -5578,15 +4694,14 @@ NetLogo 6.2.2
       <value value="0.001"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="alpha">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
@@ -5610,6 +4725,7 @@ NetLogo 6.2.2
       <value value="100"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="prob-cooperation">
+      <value value="0.2"/>
       <value value="0.5"/>
       <value value="0.8"/>
     </enumeratedValueSet>
@@ -5641,9 +4757,7 @@ NetLogo 6.2.2
     <enumeratedValueSet variable="cost-cooperation">
       <value value="10"/>
       <value value="20"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="movements">
-      <value value="&quot;random walk&quot;"/>
+      <value value="50"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="seed">
       <value value="1000"/>
