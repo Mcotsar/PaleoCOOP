@@ -1,0 +1,7480 @@
+#### ANALYSIS FOR THE PAPER ####
+
+#### TIAN SHAN - SCENARIO 1 ####
+
+library (ggplot2)
+library (dplyr)
+library (gridExtra)
+library (grid)
+library (reshape2)
+
+
+
+TienShan_Scenario1 <- PaleoCOOP_model_Scenario1_TienShan
+TienShan_Scenario1
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+TienShan_Scenario1_run1 <- subset(TienShan_Scenario1, run == 1)
+TienShan_Scenario1_run1
+
+
+TienShan_Scenario_1_run1_results <- reshape2::melt(TienShan_Scenario1_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run1_results_plot <- ggplot(TienShan_Scenario_1_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 868), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+
+print(TienShan_Scenario_1_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+TienShan_Scenario1_run2 <- subset(TienShan_Scenario1, run == 2)
+TienShan_Scenario1_run2
+
+
+TienShan_Scenario_1_run2_results <- reshape2::melt(TienShan_Scenario1_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run2_results_plot <- ggplot(TienShan_Scenario_1_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+
+print(TienShan_Scenario_1_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario1_run3 <- subset(TienShan_Scenario1, run == 3)
+TienShan_Scenario1_run3
+
+TienShan_Scenario_1_run3_results <- reshape2::melt(TienShan_Scenario1_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run3_results_plot <- ggplot(TienShan_Scenario_1_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+
+print(TienShan_Scenario_1_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+TienShan_Scenario1_run4 <- subset(TienShan_Scenario1, run == 4)
+TienShan_Scenario1_run4
+
+TienShan_Scenario_1_run4_results <- reshape2::melt(TienShan_Scenario1_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run4_results_plot <- ggplot(TienShan_Scenario_1_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+print(TienShan_Scenario_1_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+TienShan_Scenario1_run5 <- subset(TienShan_Scenario1, run == 5)
+TienShan_Scenario1_run5
+
+TienShan_Scenario_1_run5_results <- reshape2::melt(TienShan_Scenario1_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run5_results_plot <- ggplot(TienShan_Scenario_1_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 180), expand = c(0, 0))
+
+
+print(TienShan_Scenario_1_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+TienShan_Scenario1_run6 <- subset(TienShan_Scenario1, run == 6)
+TienShan_Scenario1_run6
+
+TienShan_Scenario_1_run6_results <- reshape2::melt(TienShan_Scenario1_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run6_results_plot <- ggplot(TienShan_Scenario_1_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+TienShan_Scenario1_run7 <- subset(TienShan_Scenario1, run == 7)
+TienShan_Scenario1_run7
+
+TienShan_Scenario_1_run7_results <- reshape2::melt(TienShan_Scenario1_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run7_results_plot <- ggplot(TienShan_Scenario_1_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario1_run8 <- subset(TienShan_Scenario1, run == 8)
+TienShan_Scenario1_run8
+
+TienShan_Scenario_1_run8_results <- reshape2::melt(TienShan_Scenario1_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run8_results_plot <- ggplot(TienShan_Scenario_1_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario1_run9 <- subset(TienShan_Scenario1, run == 9)
+TienShan_Scenario1_run9
+
+TienShan_Scenario_1_run9_results <- reshape2::melt(TienShan_Scenario1_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run9_results_plot <- ggplot(TienShan_Scenario_1_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario1_run10 <- subset(TienShan_Scenario1, run == 10)
+TienShan_Scenario1_run10
+
+TienShan_Scenario_1_run10_results <- reshape2::melt(TienShan_Scenario1_run10, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run10_results_plot <- ggplot(TienShan_Scenario_1_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario1_run11 <- subset(TienShan_Scenario1, run == 11)
+TienShan_Scenario1_run11
+
+TienShan_Scenario_1_run11_results <- reshape2::melt(TienShan_Scenario1_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run11_results_plot <- ggplot(TienShan_Scenario_1_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+TienShan_Scenario1_run12 <- subset(TienShan_Scenario1, run == 12)
+TienShan_Scenario1_run12
+
+TienShan_Scenario_1_run12_results <- reshape2::melt(TienShan_Scenario1_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run12_results_plot <- ggplot(TienShan_Scenario_1_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 890), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario1_run13 <- subset(TienShan_Scenario1, run == 13)
+TienShan_Scenario1_run13
+
+TienShan_Scenario_1_run13_results <- reshape2::melt(TienShan_Scenario1_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run13_results_plot <- ggplot(TienShan_Scenario_1_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario1_run14 <- subset(TienShan_Scenario1, run == 14)
+TienShan_Scenario1_run14
+
+TienShan_Scenario_1_run14_results <- reshape2::melt(TienShan_Scenario1_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run14_results_plot <- ggplot(TienShan_Scenario_1_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario1_run15 <- subset(TienShan_Scenario1, run == 15)
+TienShan_Scenario1_run15
+
+TienShan_Scenario_1_run15_results <- reshape2::melt(TienShan_Scenario1_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run15_results_plot <- ggplot(TienShan_Scenario_1_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 880), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario1_run16 <- subset(TienShan_Scenario1, run == 16)
+TienShan_Scenario1_run16
+
+TienShan_Scenario_1_run16_results <- reshape2::melt(TienShan_Scenario1_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run16_results_plot <- ggplot(TienShan_Scenario_1_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario1_run17 <- subset(TienShan_Scenario1, run == 17)
+TienShan_Scenario1_run17
+
+TienShan_Scenario_1_run17_results <- reshape2::melt(TienShan_Scenario1_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run17_results_plot <- ggplot(TienShan_Scenario_1_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario1_run18 <- subset(TienShan_Scenario1, run == 18)
+TienShan_Scenario1_run18
+
+TienShan_Scenario_1_run18_results <- reshape2::melt(TienShan_Scenario1_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run18_results_plot <- ggplot(TienShan_Scenario_1_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 880), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario1_run19 <- subset(TienShan_Scenario1, run == 19)
+TienShan_Scenario1_run19
+
+TienShan_Scenario_1_run19_results <- reshape2::melt(TienShan_Scenario1_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run19_results_plot <- ggplot(TienShan_Scenario_1_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario1_run20 <- subset(TienShan_Scenario1, run == 20)
+TienShan_Scenario1_run20
+
+TienShan_Scenario_1_run20_results <- reshape2::melt(TienShan_Scenario1_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run20_results_plot <- ggplot(TienShan_Scenario_1_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 890), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario1_run21 <- subset(TienShan_Scenario1, run == 21)
+TienShan_Scenario1_run21
+
+TienShan_Scenario_1_run21_results <- reshape2::melt(TienShan_Scenario1_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run21_results_plot <- ggplot(TienShan_Scenario_1_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario1_run22 <- subset(TienShan_Scenario1, run == 22)
+TienShan_Scenario1_run22
+
+TienShan_Scenario_1_run22_results <- reshape2::melt(TienShan_Scenario1_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run22_results_plot <- ggplot(TienShan_Scenario_1_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario1_run23 <- subset(TienShan_Scenario1, run == 23)
+TienShan_Scenario1_run23
+
+TienShan_Scenario_1_run23_results <- reshape2::melt(TienShan_Scenario1_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run23_results_plot <- ggplot(TienShan_Scenario_1_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario1_run24 <- subset(TienShan_Scenario1, run == 24)
+TienShan_Scenario1_run24
+
+TienShan_Scenario_1_run24_results <- reshape2::melt(TienShan_Scenario1_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run24_results_plot <- ggplot(TienShan_Scenario_1_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario1_run25 <- subset(TienShan_Scenario1, run == 25)
+TienShan_Scenario1_run25
+
+TienShan_Scenario_1_run25_results <- reshape2::melt(TienShan_Scenario1_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run25_results_plot <- ggplot(TienShan_Scenario_1_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+TienShan_Scenario1_run26 <- subset(TienShan_Scenario1, run == 26)
+TienShan_Scenario1_run26
+
+TienShan_Scenario_1_run26_results <- reshape2::melt(TienShan_Scenario1_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run26_results_plot <- ggplot(TienShan_Scenario_1_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 220), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario1_run27 <- subset(TienShan_Scenario1, run == 27)
+TienShan_Scenario1_run27
+
+TienShan_Scenario_1_run27_results <- reshape2::melt(TienShan_Scenario1_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_1_run27_results_plot <- ggplot(TienShan_Scenario_1_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_1_run27_results_plot)
+
+
+
+
+#### together prob. 0.20 ####
+
+scenario1_prob20 = grid.arrange(TienShan_Scenario_1_run1_results_plot,
+                                TienShan_Scenario_1_run4_results_plot,
+                                TienShan_Scenario_1_run7_results_plot,
+                                TienShan_Scenario_1_run10_results_plot,
+                                TienShan_Scenario_1_run13_results_plot,
+                                TienShan_Scenario_1_run16_results_plot,
+                                TienShan_Scenario_1_run19_results_plot,
+                                TienShan_Scenario_1_run22_results_plot,
+                                TienShan_Scenario_1_run25_results_plot,
+    top = textGrob("Scenario 1 Tian Shan, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+#scenario1_prob20 = grid.arrange(scenario3_alpha5_a, scenario3_alpha5_b, scenario3_alpha5_c, scenario3_alpha5_d, scenario3_alpha8_e, scenario3_alpha8_f, scenario3_alpha8_g, scenario3_alpha8_h, top = textGrob("Scenario 1 Tian Shan", gp = gpar(fontsize = unit(20, "lines"))), nrow = 2)
+
+scenario1_prob20
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_20 <- list(TienShan_Scenario_1_run1_results,
+                    TienShan_Scenario_1_run4_results,
+                    TienShan_Scenario_1_run7_results,
+                    TienShan_Scenario_1_run10_results,
+                    TienShan_Scenario_1_run13_results,
+                    TienShan_Scenario_1_run16_results,
+                    TienShan_Scenario_1_run19_results,
+                    TienShan_Scenario_1_run22_results,
+                    TienShan_Scenario_1_run25_results)
+
+# join in one data frame
+combined_simulation_tienshan_20 <- bind_rows(simulations_tienshan_20, .id = "SimulationID")
+
+
+summary_simulation_tienshan20 <- combined_simulation_tienshan_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan20
+
+
+plot_tienshan_20 <- ggplot(summary_simulation_tienshan20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Tian Shan, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal()+
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+plot_tienshan_20
+
+
+
+# holo <- ggplot(summary_data, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+#   # Bandas de variabilidad (desviación estándar)
+#   geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), 
+#               alpha = 0.1, color = NA) +
+#   # Línea del promedio
+#   geom_line(size = 1) +
+#   # Formato
+#   scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+#   scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+#   labs(title = "Scenario 1 Tian Shan, prob.coop: 0.20",
+#        x = "Months", y = "Population") +
+#   theme_minimal()
+# 
+# holo
+
+
+
+
+#### together prob. 0.50 ####
+
+scenario1_prob50 = grid.arrange(TienShan_Scenario_1_run2_results_plot,
+                                TienShan_Scenario_1_run5_results_plot,
+                                TienShan_Scenario_1_run8_results_plot,
+                                TienShan_Scenario_1_run11_results_plot,
+                                TienShan_Scenario_1_run14_results_plot,
+                                TienShan_Scenario_1_run17_results_plot,
+                                TienShan_Scenario_1_run20_results_plot,
+                                TienShan_Scenario_1_run23_results_plot,
+                                TienShan_Scenario_1_run26_results_plot,
+                                top = textGrob("Scenario 1 Tian Shan, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario1_prob50
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_50 <- list(TienShan_Scenario_1_run2_results,
+                                TienShan_Scenario_1_run5_results,
+                                TienShan_Scenario_1_run8_results,
+                                TienShan_Scenario_1_run11_results,
+                                TienShan_Scenario_1_run14_results,
+                                TienShan_Scenario_1_run17_results,
+                                TienShan_Scenario_1_run20_results,
+                                TienShan_Scenario_1_run23_results,
+                                TienShan_Scenario_1_run26_results)
+
+
+
+# join in one data frame
+combined_simulation_tienshan_50 <- bind_rows(simulations_tienshan_50, .id = "SimulationID")
+
+
+summary_simulation_tienshan50 <- combined_simulation_tienshan_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan50
+
+
+plot_tienshan_50 <- ggplot(summary_simulation_tienshan50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Tian Shan, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal()+
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 210), expand = c(0, 0))
+
+plot_tienshan_50
+
+
+
+
+
+#### together prob. 0.80 ####
+
+scenario1_prob80 = grid.arrange(TienShan_Scenario_1_run3_results_plot,
+                                TienShan_Scenario_1_run6_results_plot,
+                                TienShan_Scenario_1_run9_results_plot,
+                                TienShan_Scenario_1_run12_results_plot,
+                                TienShan_Scenario_1_run15_results_plot,
+                                TienShan_Scenario_1_run18_results_plot,
+                                TienShan_Scenario_1_run21_results_plot,
+                                TienShan_Scenario_1_run24_results_plot,
+                                TienShan_Scenario_1_run27_results_plot,
+                                top = textGrob("Scenario 1 Tian Shan, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario1_prob80
+
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_80 <- list(TienShan_Scenario_1_run3_results,
+                                TienShan_Scenario_1_run6_results,
+                                TienShan_Scenario_1_run9_results,
+                                TienShan_Scenario_1_run12_results,
+                                TienShan_Scenario_1_run15_results,
+                                TienShan_Scenario_1_run18_results,
+                                TienShan_Scenario_1_run21_results,
+                                TienShan_Scenario_1_run24_results,
+                                TienShan_Scenario_1_run27_results)
+
+
+
+# join in one data frame
+combined_simulation_tienshan_80 <- bind_rows(simulations_tienshan_80, .id = "SimulationID")
+
+
+summary_simulation_tienshan80 <- combined_simulation_tienshan_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan80
+
+
+plot_tienshan_80 <- ggplot(summary_simulation_tienshan80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Tian Shan, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal()+
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+plot_tienshan_80
+
+
+
+
+#### TIAN SHAN - SCENARIO 4 ####
+
+
+TienShan_Scenario4 <- PaleoCOOP_model_Scenario4_TienShan
+TienShan_Scenario4
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+TienShan_Scenario4_run1 <- subset(TienShan_Scenario4, run == 1)
+TienShan_Scenario4_run1
+
+
+TienShan_Scenario_4_run1_results <- reshape2::melt(TienShan_Scenario4_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run1_results_plot <- ggplot(TienShan_Scenario_4_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+
+
+print(TienShan_Scenario_4_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+TienShan_Scenario4_run2 <- subset(TienShan_Scenario4, run == 2)
+TienShan_Scenario4_run2
+
+
+TienShan_Scenario_4_run2_results <- reshape2::melt(TienShan_Scenario4_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run2_results_plot <- ggplot(TienShan_Scenario_4_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+print(TienShan_Scenario_4_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario4_run3 <- subset(TienShan_Scenario4, run == 3)
+TienShan_Scenario4_run3
+
+TienShan_Scenario_4_run3_results <- reshape2::melt(TienShan_Scenario4_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run3_results_plot <- ggplot(TienShan_Scenario_4_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+
+print(TienShan_Scenario_4_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+TienShan_Scenario4_run4 <- subset(TienShan_Scenario4, run == 4)
+TienShan_Scenario4_run4
+
+TienShan_Scenario_4_run4_results <- reshape2::melt(TienShan_Scenario4_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run4_results_plot <- ggplot(TienShan_Scenario_4_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+
+print(TienShan_Scenario_4_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+TienShan_Scenario4_run5 <- subset(TienShan_Scenario4, run == 5)
+TienShan_Scenario4_run5
+
+TienShan_Scenario_4_run5_results <- reshape2::melt(TienShan_Scenario4_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run5_results_plot <- ggplot(TienShan_Scenario_4_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+print(TienShan_Scenario_4_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+TienShan_Scenario4_run6 <- subset(TienShan_Scenario4, run == 6)
+TienShan_Scenario4_run6
+
+TienShan_Scenario_4_run6_results <- reshape2::melt(TienShan_Scenario4_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run6_results_plot <- ggplot(TienShan_Scenario_4_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+TienShan_Scenario4_run7 <- subset(TienShan_Scenario4, run == 7)
+TienShan_Scenario4_run7
+
+TienShan_Scenario_4_run7_results <- reshape2::melt(TienShan_Scenario4_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run7_results_plot <- ggplot(TienShan_Scenario_4_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario4_run8 <- subset(TienShan_Scenario4, run == 8)
+TienShan_Scenario4_run8
+
+TienShan_Scenario_4_run8_results <- reshape2::melt(TienShan_Scenario4_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run8_results_plot <- ggplot(TienShan_Scenario_4_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 890), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 180), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario4_run9 <- subset(TienShan_Scenario4, run == 9)
+TienShan_Scenario4_run9
+
+TienShan_Scenario_4_run9_results <- reshape2::melt(TienShan_Scenario4_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run9_results_plot <- ggplot(TienShan_Scenario_4_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario4_run10 <- subset(TienShan_Scenario4, run == 10)
+TienShan_Scenario4_run10
+
+TienShan_Scenario_4_run10_results <- reshape2::melt(TienShan_Scenario4_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run10_results_plot <- ggplot(TienShan_Scenario_4_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 840), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario4_run11 <- subset(TienShan_Scenario4, run == 11)
+TienShan_Scenario4_run11
+
+TienShan_Scenario_4_run11_results <- reshape2::melt(TienShan_Scenario4_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run11_results_plot <- ggplot(TienShan_Scenario_4_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+TienShan_Scenario4_run12 <- subset(TienShan_Scenario4, run == 12)
+TienShan_Scenario4_run12
+
+TienShan_Scenario_4_run12_results <- reshape2::melt(TienShan_Scenario4_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run12_results_plot <- ggplot(TienShan_Scenario_4_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario4_run13 <- subset(TienShan_Scenario4, run == 13)
+TienShan_Scenario4_run13
+
+TienShan_Scenario_4_run13_results <- reshape2::melt(TienShan_Scenario4_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run13_results_plot <- ggplot(TienShan_Scenario_4_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario4_run14 <- subset(TienShan_Scenario4, run == 14)
+TienShan_Scenario4_run14
+
+TienShan_Scenario_4_run14_results <- reshape2::melt(TienShan_Scenario4_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run14_results_plot <- ggplot(TienShan_Scenario_4_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario4_run15 <- subset(TienShan_Scenario4, run == 15)
+TienShan_Scenario4_run15
+
+TienShan_Scenario_4_run15_results <- reshape2::melt(TienShan_Scenario4_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run15_results_plot <- ggplot(TienShan_Scenario_4_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario4_run16 <- subset(TienShan_Scenario4, run == 16)
+TienShan_Scenario4_run16
+
+TienShan_Scenario_4_run16_results <- reshape2::melt(TienShan_Scenario4_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run16_results_plot <- ggplot(TienShan_Scenario_4_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario4_run17 <- subset(TienShan_Scenario4, run == 17)
+TienShan_Scenario4_run17
+
+TienShan_Scenario_4_run17_results <- reshape2::melt(TienShan_Scenario4_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run17_results_plot <- ggplot(TienShan_Scenario_4_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario4_run18 <- subset(TienShan_Scenario4, run == 18)
+TienShan_Scenario4_run18
+
+TienShan_Scenario_4_run18_results <- reshape2::melt(TienShan_Scenario4_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run18_results_plot <- ggplot(TienShan_Scenario_4_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario4_run19 <- subset(TienShan_Scenario4, run == 19)
+TienShan_Scenario4_run19
+
+TienShan_Scenario_4_run19_results <- reshape2::melt(TienShan_Scenario4_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run19_results_plot <- ggplot(TienShan_Scenario_4_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario4_run20 <- subset(TienShan_Scenario4, run == 20)
+TienShan_Scenario4_run20
+
+TienShan_Scenario_4_run20_results <- reshape2::melt(TienShan_Scenario4_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run20_results_plot <- ggplot(TienShan_Scenario_4_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 890), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario4_run21 <- subset(TienShan_Scenario4, run == 21)
+TienShan_Scenario4_run21
+
+TienShan_Scenario_4_run21_results <- reshape2::melt(TienShan_Scenario4_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run21_results_plot <- ggplot(TienShan_Scenario_4_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario4_run22 <- subset(TienShan_Scenario4, run == 22)
+TienShan_Scenario4_run22
+
+TienShan_Scenario_4_run22_results <- reshape2::melt(TienShan_Scenario4_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run22_results_plot <- ggplot(TienShan_Scenario_4_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 840), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario4_run23 <- subset(TienShan_Scenario4, run == 23)
+TienShan_Scenario4_run23
+
+TienShan_Scenario_4_run23_results <- reshape2::melt(TienShan_Scenario4_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run23_results_plot <- ggplot(TienShan_Scenario_4_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario4_run24 <- subset(TienShan_Scenario4, run == 24)
+TienShan_Scenario4_run24
+
+TienShan_Scenario_4_run24_results <- reshape2::melt(TienShan_Scenario4_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run24_results_plot <- ggplot(TienShan_Scenario_4_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario4_run25 <- subset(TienShan_Scenario4, run == 25)
+TienShan_Scenario4_run25
+
+TienShan_Scenario_4_run25_results <- reshape2::melt(TienShan_Scenario4_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run25_results_plot <- ggplot(TienShan_Scenario_4_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+TienShan_Scenario4_run26 <- subset(TienShan_Scenario4, run == 26)
+TienShan_Scenario4_run26
+
+TienShan_Scenario_4_run26_results <- reshape2::melt(TienShan_Scenario4_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run26_results_plot <- ggplot(TienShan_Scenario_4_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario4_run27 <- subset(TienShan_Scenario4, run == 27)
+TienShan_Scenario4_run27
+
+TienShan_Scenario_4_run27_results <- reshape2::melt(TienShan_Scenario4_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_4_run27_results_plot <- ggplot(TienShan_Scenario_4_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 870), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(TienShan_Scenario_4_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+scenario4_prob20 = grid.arrange(TienShan_Scenario_4_run1_results_plot,
+                                TienShan_Scenario_4_run4_results_plot,
+                                TienShan_Scenario_4_run7_results_plot,
+                                TienShan_Scenario_4_run10_results_plot,
+                                TienShan_Scenario_4_run13_results_plot,
+                                TienShan_Scenario_4_run16_results_plot,
+                                TienShan_Scenario_4_run19_results_plot,
+                                TienShan_Scenario_4_run22_results_plot,
+                                TienShan_Scenario_4_run25_results_plot,
+                                top = textGrob("Scenario 4 Tian Shan, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario4_prob20
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_4_20 <- list(TienShan_Scenario_4_run1_results,
+                                TienShan_Scenario_4_run4_results,
+                                TienShan_Scenario_4_run7_results,
+                                TienShan_Scenario_4_run10_results,
+                                TienShan_Scenario_4_run13_results,
+                                TienShan_Scenario_4_run16_results,
+                                TienShan_Scenario_4_run19_results,
+                                TienShan_Scenario_4_run22_results,
+                                TienShan_Scenario_4_run25_results)
+
+# join in one data frame
+combined_simulation_tienshan_4_20 <- bind_rows(simulations_tienshan_4_20, .id = "SimulationID")
+
+
+summary_simulation_tienshan_4_20 <- combined_simulation_tienshan_4_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_4_20
+
+
+plot_tienshan_4_20 <- ggplot(summary_simulation_tienshan_4_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Tian Shan, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 180), expand = c(0, 0))
+
+plot_tienshan_4_20
+
+
+
+
+
+
+#### together prob. 0.50 ####
+
+scenario4_prob50 = grid.arrange(TienShan_Scenario_4_run2_results_plot,
+                                TienShan_Scenario_4_run5_results_plot,
+                                TienShan_Scenario_4_run8_results_plot,
+                                TienShan_Scenario_4_run11_results_plot,
+                                TienShan_Scenario_4_run14_results_plot,
+                                TienShan_Scenario_4_run17_results_plot,
+                                TienShan_Scenario_4_run20_results_plot,
+                                TienShan_Scenario_4_run23_results_plot,
+                                TienShan_Scenario_4_run26_results_plot,
+                                top = textGrob("Scenario 4 Tian Shan, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario4_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_4_50 <- list(TienShan_Scenario_4_run2_results,
+                                  TienShan_Scenario_4_run5_results,
+                                  TienShan_Scenario_4_run8_results,
+                                  TienShan_Scenario_4_run11_results,
+                                  TienShan_Scenario_4_run14_results,
+                                  TienShan_Scenario_4_run17_results,
+                                  TienShan_Scenario_4_run20_results,
+                                  TienShan_Scenario_4_run23_results,
+                                  TienShan_Scenario_4_run26_results)
+
+# join in one data frame
+combined_simulation_tienshan_4_50 <- bind_rows(simulations_tienshan_4_50, .id = "SimulationID")
+
+
+summary_simulation_tienshan_4_50 <- combined_simulation_tienshan_4_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_4_50
+
+
+plot_tienshan_4_50 <- ggplot(summary_simulation_tienshan_4_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Tian Shan, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal()+
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+
+plot_tienshan_4_50
+
+
+
+
+
+#### together prob. 0.80 ####
+
+scenario4_prob80 = grid.arrange(TienShan_Scenario_4_run3_results_plot,
+                                TienShan_Scenario_4_run6_results_plot,
+                                TienShan_Scenario_4_run9_results_plot,
+                                TienShan_Scenario_4_run12_results_plot,
+                                TienShan_Scenario_4_run15_results_plot,
+                                TienShan_Scenario_4_run18_results_plot,
+                                TienShan_Scenario_4_run21_results_plot,
+                                TienShan_Scenario_4_run24_results_plot,
+                                TienShan_Scenario_4_run27_results_plot,
+                                top = textGrob("Scenario 4 Tian Shan, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario1_prob80
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_4_80 <- list(TienShan_Scenario_4_run3_results,
+                                  TienShan_Scenario_4_run6_results,
+                                  TienShan_Scenario_4_run9_results,
+                                  TienShan_Scenario_4_run12_results,
+                                  TienShan_Scenario_4_run15_results,
+                                  TienShan_Scenario_4_run18_results,
+                                  TienShan_Scenario_4_run21_results,
+                                  TienShan_Scenario_4_run24_results,
+                                  TienShan_Scenario_4_run27_results)
+
+# join in one data frame
+combined_simulation_tienshan_4_80 <- bind_rows(simulations_tienshan_4_80, .id = "SimulationID")
+
+
+summary_simulation_tienshan_4_80 <- combined_simulation_tienshan_4_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_4_80
+
+
+plot_tienshan_4_80 <- ggplot(summary_simulation_tienshan_4_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Tian Shan, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal()+
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+
+plot_tienshan_4_80
+
+
+
+
+
+#### TIAN SHAN - SCENARIO 2 ####
+
+
+TienShan_Scenario2 <- PaleoCOOP_model_Scenario2_TienShan
+TienShan_Scenario2
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+TienShan_Scenario2_run1 <- subset(TienShan_Scenario2, run == 1)
+TienShan_Scenario2_run1
+
+
+TienShan_Scenario_2_run1_results <- reshape2::melt(TienShan_Scenario2_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run1_results_plot <- ggplot(TienShan_Scenario_2_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+
+print(TienShan_Scenario_2_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+TienShan_Scenario2_run2 <- subset(TienShan_Scenario2, run == 2)
+TienShan_Scenario2_run2
+
+
+TienShan_Scenario_2_run2_results <- reshape2::melt(TienShan_Scenario2_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run2_results_plot <- ggplot(TienShan_Scenario_2_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 30), expand = c(0, 0))
+
+
+print(TienShan_Scenario_2_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario2_run3 <- subset(TienShan_Scenario2, run == 3)
+TienShan_Scenario2_run3
+
+TienShan_Scenario_2_run3_results <- reshape2::melt(TienShan_Scenario2_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run3_results_plot <- ggplot(TienShan_Scenario_2_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+
+print(TienShan_Scenario_2_run3_results_plot)
+
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+TienShan_Scenario2_run4 <- subset(TienShan_Scenario2, run == 4)
+TienShan_Scenario2_run4
+
+TienShan_Scenario_2_run4_results <- reshape2::melt(TienShan_Scenario2_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run4_results_plot <- ggplot(TienShan_Scenario_2_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+print(TienShan_Scenario_2_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+TienShan_Scenario2_run5 <- subset(TienShan_Scenario2, run == 5)
+TienShan_Scenario2_run5
+
+TienShan_Scenario_2_run5_results <- reshape2::melt(TienShan_Scenario2_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run5_results_plot <- ggplot(TienShan_Scenario_2_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+
+print(TienShan_Scenario_2_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+TienShan_Scenario2_run6 <- subset(TienShan_Scenario2, run == 6)
+TienShan_Scenario2_run6
+
+TienShan_Scenario_2_run6_results <- reshape2::melt(TienShan_Scenario2_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run6_results_plot <- ggplot(TienShan_Scenario_2_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+TienShan_Scenario2_run7 <- subset(TienShan_Scenario2, run == 7)
+TienShan_Scenario2_run7
+
+TienShan_Scenario_2_run7_results <- reshape2::melt(TienShan_Scenario2_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run7_results_plot <- ggplot(TienShan_Scenario_2_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario2_run8 <- subset(TienShan_Scenario2, run == 8)
+TienShan_Scenario2_run8
+
+TienShan_Scenario_2_run8_results <- reshape2::melt(TienShan_Scenario2_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run8_results_plot <- ggplot(TienShan_Scenario_2_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario2_run9 <- subset(TienShan_Scenario2, run == 9)
+TienShan_Scenario2_run9
+
+TienShan_Scenario_2_run9_results <- reshape2::melt(TienShan_Scenario2_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run9_results_plot <- ggplot(TienShan_Scenario_2_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario2_run10 <- subset(TienShan_Scenario2, run == 10)
+TienShan_Scenario2_run10
+
+TienShan_Scenario_2_run10_results <- reshape2::melt(TienShan_Scenario2_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run10_results_plot <- ggplot(TienShan_Scenario_2_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario2_run11 <- subset(TienShan_Scenario2, run == 11)
+TienShan_Scenario2_run11
+
+TienShan_Scenario_2_run11_results <- reshape2::melt(TienShan_Scenario2_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run11_results_plot <- ggplot(TienShan_Scenario_2_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+TienShan_Scenario2_run12 <- subset(TienShan_Scenario2, run == 12)
+TienShan_Scenario2_run12
+
+TienShan_Scenario_2_run12_results <- reshape2::melt(TienShan_Scenario2_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run12_results_plot <- ggplot(TienShan_Scenario_2_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario2_run13 <- subset(TienShan_Scenario2, run == 13)
+TienShan_Scenario2_run13
+
+TienShan_Scenario_2_run13_results <- reshape2::melt(TienShan_Scenario2_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run13_results_plot <- ggplot(TienShan_Scenario_2_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario2_run14 <- subset(TienShan_Scenario2, run == 14)
+TienShan_Scenario2_run14
+
+TienShan_Scenario_2_run14_results <- reshape2::melt(TienShan_Scenario2_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run14_results_plot <- ggplot(TienShan_Scenario_2_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario2_run15 <- subset(TienShan_Scenario2, run == 15)
+TienShan_Scenario2_run15
+
+TienShan_Scenario_2_run15_results <- reshape2::melt(TienShan_Scenario2_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run15_results_plot <- ggplot(TienShan_Scenario_2_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario2_run16 <- subset(TienShan_Scenario2, run == 16)
+TienShan_Scenario2_run16
+
+TienShan_Scenario_2_run16_results <- reshape2::melt(TienShan_Scenario2_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run16_results_plot <- ggplot(TienShan_Scenario_2_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario2_run17 <- subset(TienShan_Scenario2, run == 17)
+TienShan_Scenario2_run17
+
+TienShan_Scenario_2_run17_results <- reshape2::melt(TienShan_Scenario2_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run17_results_plot <- ggplot(TienShan_Scenario_2_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario2_run18 <- subset(TienShan_Scenario2, run == 18)
+TienShan_Scenario2_run18
+
+TienShan_Scenario_2_run18_results <- reshape2::melt(TienShan_Scenario2_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run18_results_plot <- ggplot(TienShan_Scenario_2_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario2_run19 <- subset(TienShan_Scenario2, run == 19)
+TienShan_Scenario2_run19
+
+TienShan_Scenario_2_run19_results <- reshape2::melt(TienShan_Scenario2_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run19_results_plot <- ggplot(TienShan_Scenario_2_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario2_run20 <- subset(TienShan_Scenario2, run == 20)
+TienShan_Scenario2_run20
+
+TienShan_Scenario_2_run20_results <- reshape2::melt(TienShan_Scenario2_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run20_results_plot <- ggplot(TienShan_Scenario_2_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario2_run21 <- subset(TienShan_Scenario2, run == 21)
+TienShan_Scenario2_run21
+
+TienShan_Scenario_2_run21_results <- reshape2::melt(TienShan_Scenario2_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run21_results_plot <- ggplot(TienShan_Scenario_2_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario2_run22 <- subset(TienShan_Scenario2, run == 22)
+TienShan_Scenario2_run22
+
+TienShan_Scenario_2_run22_results <- reshape2::melt(TienShan_Scenario2_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run22_results_plot <- ggplot(TienShan_Scenario_2_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario2_run23 <- subset(TienShan_Scenario2, run == 23)
+TienShan_Scenario2_run23
+
+TienShan_Scenario_2_run23_results <- reshape2::melt(TienShan_Scenario2_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run23_results_plot <- ggplot(TienShan_Scenario_2_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario2_run24 <- subset(TienShan_Scenario2, run == 24)
+TienShan_Scenario2_run24
+
+TienShan_Scenario_2_run24_results <- reshape2::melt(TienShan_Scenario2_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run24_results_plot <- ggplot(TienShan_Scenario_2_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario2_run25 <- subset(TienShan_Scenario2, run == 25)
+TienShan_Scenario2_run25
+
+TienShan_Scenario_2_run25_results <- reshape2::melt(TienShan_Scenario2_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run25_results_plot <- ggplot(TienShan_Scenario_2_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+TienShan_Scenario2_run26 <- subset(TienShan_Scenario2, run == 26)
+TienShan_Scenario2_run26
+
+TienShan_Scenario2_run26_results <- reshape2::melt(TienShan_Scenario2_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run26_results_plot <- ggplot(TienShan_Scenario2_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario2_run27 <- subset(TienShan_Scenario2, run == 27)
+TienShan_Scenario2_run27
+
+TienShan_Scenario_2_run27_results <- reshape2::melt(TienShan_Scenario2_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_2_run27_results_plot <- ggplot(TienShan_Scenario_2_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_2_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+scenario2_prob20 = grid.arrange(TienShan_Scenario_2_run1_results_plot,
+                                TienShan_Scenario_2_run4_results_plot,
+                                TienShan_Scenario_2_run7_results_plot,
+                                TienShan_Scenario_2_run10_results_plot,
+                                TienShan_Scenario_2_run13_results_plot,
+                                TienShan_Scenario_2_run16_results_plot,
+                                TienShan_Scenario_2_run19_results_plot,
+                                TienShan_Scenario_2_run22_results_plot,
+                                TienShan_Scenario_2_run25_results_plot,
+                                top = textGrob("Scenarios 2-3 Tian Shan, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario2_prob20
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_2_20 <- list(TienShan_Scenario_2_run1_results,
+                                  TienShan_Scenario_2_run4_results,
+                                  TienShan_Scenario_2_run7_results,
+                                  TienShan_Scenario_2_run10_results,
+                                  TienShan_Scenario_2_run13_results,
+                                  TienShan_Scenario_2_run16_results,
+                                  TienShan_Scenario_2_run19_results,
+                                  TienShan_Scenario_2_run22_results,
+                                  TienShan_Scenario_2_run25_results)
+
+# join in one data frame
+combined_simulation_tienshan_2_20 <- bind_rows(simulations_tienshan_2_20, .id = "SimulationID")
+
+
+summary_simulation_tienshan_2_20 <- combined_simulation_tienshan_2_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_2_20
+
+
+plot_tienshan_2_20 <- ggplot(summary_simulation_tienshan_2_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Tian Shan, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+plot_tienshan_2_20
+
+
+
+
+
+
+#### together prob. 0.50 ####
+
+scenario2_prob50 = grid.arrange(TienShan_Scenario_2_run2_results_plot,
+                                TienShan_Scenario_2_run5_results_plot,
+                                TienShan_Scenario_2_run8_results_plot,
+                                TienShan_Scenario_2_run11_results_plot,
+                                TienShan_Scenario_2_run14_results_plot,
+                                TienShan_Scenario_2_run17_results_plot,
+                                TienShan_Scenario_2_run20_results_plot,
+                                TienShan_Scenario_2_run23_results_plot,
+                                TienShan_Scenario_2_run26_results_plot,
+                                top = textGrob("Scenarios 2-3 Tian Shan, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario2_prob50
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_2_50 <- list(TienShan_Scenario_2_run2_results,
+                                  TienShan_Scenario_2_run5_results,
+                                  TienShan_Scenario_2_run8_results,
+                                  TienShan_Scenario_2_run11_results,
+                                  TienShan_Scenario_2_run14_results,
+                                  TienShan_Scenario_2_run17_results,
+                                  TienShan_Scenario_2_run20_results,
+                                  TienShan_Scenario_2_run23_results,
+                                  TienShan_Scenario_2_run26_results)
+
+# join in one data frame
+combined_simulation_tienshan_2_50 <- bind_rows(simulations_tienshan_2_50, .id = "SimulationID")
+
+
+summary_simulation_tienshan_2_50 <- combined_simulation_tienshan_2_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_2_50
+
+
+plot_tienshan_2_50 <- ggplot(summary_simulation_tienshan_2_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Tian Shan, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 80), expand = c(0, 0))
+
+plot_tienshan_2_50
+
+
+
+
+#### together prob. 0.80 ####
+
+scenario2_prob80 = grid.arrange(TienShan_Scenario_2_run3_results_plot,
+                                TienShan_Scenario_2_run6_results_plot,
+                                TienShan_Scenario_2_run9_results_plot,
+                                TienShan_Scenario_2_run12_results_plot,
+                                TienShan_Scenario_2_run15_results_plot,
+                                TienShan_Scenario_2_run18_results_plot,
+                                TienShan_Scenario_2_run21_results_plot,
+                                TienShan_Scenario_2_run24_results_plot,
+                                TienShan_Scenario_2_run27_results_plot,
+                                top = textGrob("Scenarios 2-3 Tian Shan, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario2_prob80
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_2_80 <- list(TienShan_Scenario_2_run3_results,
+                                  TienShan_Scenario_2_run6_results,
+                                  TienShan_Scenario_2_run9_results,
+                                  TienShan_Scenario_2_run12_results,
+                                  TienShan_Scenario_2_run15_results,
+                                  TienShan_Scenario_2_run18_results,
+                                  TienShan_Scenario_2_run21_results,
+                                  TienShan_Scenario_2_run24_results,
+                                  TienShan_Scenario_2_run27_results)
+
+# join in one data frame
+combined_simulation_tienshan_2_80 <- bind_rows(simulations_tienshan_2_80, .id = "SimulationID")
+
+
+summary_simulation_tienshan_2_80 <- combined_simulation_tienshan_2_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_2_80
+
+
+plot_tienshan_2_80 <- ggplot(summary_simulation_tienshan_2_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Tian Shan, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+plot_tienshan_2_80
+
+
+
+
+
+#### TIAN SHAN - SCENARIO 3 ####
+
+
+TienShan_Scenario3 <- PaleoCOOP_model_Scenario3_TienShan
+TienShan_Scenario3
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+TienShan_Scenario3_run1 <- subset(TienShan_Scenario3, run == 1)
+TienShan_Scenario3_run1
+
+
+TienShan_Scenario_3_run1_results <- reshape2::melt(TienShan_Scenario3_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run1_results_plot <- ggplot(TienShan_Scenario_3_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+
+print(TienShan_Scenario_3_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+TienShan_Scenario3_run2 <- subset(TienShan_Scenario3, run == 2)
+TienShan_Scenario3_run2
+
+
+TienShan_Scenario_3_run2_results <- reshape2::melt(TienShan_Scenario3_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run2_results_plot <- ggplot(TienShan_Scenario_3_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+print(TienShan_Scenario_3_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario3_run3 <- subset(TienShan_Scenario3, run == 3)
+TienShan_Scenario2_run3
+
+TienShan_Scenario_3_run3_results <- reshape2::melt(TienShan_Scenario3_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run3_results_plot <- ggplot(TienShan_Scenario_3_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+
+print(TienShan_Scenario_3_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+TienShan_Scenario3_run4 <- subset(TienShan_Scenario3, run == 4)
+TienShan_Scenario3_run4
+
+TienShan_Scenario_3_run4_results <- reshape2::melt(TienShan_Scenario3_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run4_results_plot <- ggplot(TienShan_Scenario_3_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+
+print(TienShan_Scenario_3_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+TienShan_Scenario3_run5 <- subset(TienShan_Scenario3, run == 5)
+TienShan_Scenario3_run5
+
+TienShan_Scenario_3_run5_results <- reshape2::melt(TienShan_Scenario3_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run5_results_plot <- ggplot(TienShan_Scenario_3_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+
+print(TienShan_Scenario_3_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+TienShan_Scenario3_run6 <- subset(TienShan_Scenario3, run == 6)
+TienShan_Scenario3_run6
+
+TienShan_Scenario_3_run6_results <- reshape2::melt(TienShan_Scenario3_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run6_results_plot <- ggplot(TienShan_Scenario_3_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+TienShan_Scenario3_run7 <- subset(TienShan_Scenario3, run == 7)
+TienShan_Scenario3_run7
+
+TienShan_Scenario_3_run7_results <- reshape2::melt(TienShan_Scenario3_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run7_results_plot <- ggplot(TienShan_Scenario_3_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario3_run8 <- subset(TienShan_Scenario3, run == 8)
+TienShan_Scenario3_run8
+
+TienShan_Scenario_3_run8_results <- reshape2::melt(TienShan_Scenario3_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run8_results_plot <- ggplot(TienShan_Scenario_3_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario3_run9 <- subset(TienShan_Scenario3, run == 9)
+TienShan_Scenario3_run9
+
+TienShan_Scenario_3_run9_results <- reshape2::melt(TienShan_Scenario3_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run9_results_plot <- ggplot(TienShan_Scenario_3_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario3_run10 <- subset(TienShan_Scenario3, run == 10)
+TienShan_Scenario3_run10
+
+TienShan_Scenario_3_run10_results <- reshape2::melt(TienShan_Scenario3_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run10_results_plot <- ggplot(TienShan_Scenario_3_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario3_run11 <- subset(TienShan_Scenario3, run == 11)
+TienShan_Scenario3_run11
+
+TienShan_Scenario_3_run11_results <- reshape2::melt(TienShan_Scenario3_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run11_results_plot <- ggplot(TienShan_Scenario_3_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+TienShan_Scenario3_run12 <- subset(TienShan_Scenario3, run == 12)
+TienShan_Scenario3_run12
+
+TienShan_Scenario_3_run12_results <- reshape2::melt(TienShan_Scenario3_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run12_results_plot <- ggplot(TienShan_Scenario_3_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run12_results_plot)
+
+
+#Run 13. alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario3_run13 <- subset(TienShan_Scenario3, run == 13)
+TienShan_Scenario3_run13
+
+TienShan_Scenario_3_run13_results <- reshape2::melt(TienShan_Scenario3_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run13_results_plot <- ggplot(TienShan_Scenario_3_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario3_run14 <- subset(TienShan_Scenario3, run == 14)
+TienShan_Scenario3_run14
+
+TienShan_Scenario_3_run14_results <- reshape2::melt(TienShan_Scenario3_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run14_results_plot <- ggplot(TienShan_Scenario_3_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario3_run15 <- subset(TienShan_Scenario3, run == 15)
+TienShan_Scenario3_run15
+
+TienShan_Scenario_3_run15_results <- reshape2::melt(TienShan_Scenario3_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run15_results_plot <- ggplot(TienShan_Scenario_3_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario3_run16 <- subset(TienShan_Scenario3, run == 16)
+TienShan_Scenario3_run16
+
+TienShan_Scenario_3_run16_results <- reshape2::melt(TienShan_Scenario3_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run16_results_plot <- ggplot(TienShan_Scenario_3_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+TienShan_Scenario3_run17 <- subset(TienShan_Scenario3, run == 17)
+TienShan_Scenario3_run17
+
+TienShan_Scenario_3_run17_results <- reshape2::melt(TienShan_Scenario3_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run17_results_plot <- ggplot(TienShan_Scenario_3_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario3_run18 <- subset(TienShan_Scenario3, run == 18)
+TienShan_Scenario3_run18
+
+TienShan_Scenario_3_run18_results <- reshape2::melt(TienShan_Scenario3_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run18_results_plot <- ggplot(TienShan_Scenario_3_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+TienShan_Scenario3_run19 <- subset(TienShan_Scenario3, run == 19)
+TienShan_Scenario3_run19
+
+TienShan_Scenario_3_run19_results <- reshape2::melt(TienShan_Scenario3_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run19_results_plot <- ggplot(TienShan_Scenario_3_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+TienShan_Scenario3_run20 <- subset(TienShan_Scenario3, run == 20)
+TienShan_Scenario3_run20
+
+TienShan_Scenario_3_run20_results <- reshape2::melt(TienShan_Scenario3_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run20_results_plot <- ggplot(TienShan_Scenario_3_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+TienShan_Scenario3_run21 <- subset(TienShan_Scenario3, run == 21)
+TienShan_Scenario3_run21
+
+TienShan_Scenario_3_run21_results <- reshape2::melt(TienShan_Scenario3_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run21_results_plot <- ggplot(TienShan_Scenario_3_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+TienShan_Scenario3_run22 <- subset(TienShan_Scenario3, run == 22)
+TienShan_Scenario3_run22
+
+TienShan_Scenario_3_run22_results <- reshape2::melt(TienShan_Scenario3_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run22_results_plot <- ggplot(TienShan_Scenario_3_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+TienShan_Scenario3_run23 <- subset(TienShan_Scenario3, run == 23)
+TienShan_Scenario3_run23
+
+TienShan_Scenario_3_run23_results <- reshape2::melt(TienShan_Scenario3_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run23_results_plot <- ggplot(TienShan_Scenario_3_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+TienShan_Scenario3_run24 <- subset(TienShan_Scenario3, run == 24)
+TienShan_Scenario3_run24
+
+TienShan_Scenario_3_run24_results <- reshape2::melt(TienShan_Scenario3_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run24_results_plot <- ggplot(TienShan_Scenario_3_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+TienShan_Scenario3_run25 <- subset(TienShan_Scenario3, run == 25)
+TienShan_Scenario3_run25
+
+TienShan_Scenario_3_run25_results <- reshape2::melt(TienShan_Scenario3_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run25_results_plot <- ggplot(TienShan_Scenario_3_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+TienShan_Scenario3_run26 <- subset(TienShan_Scenario3, run == 26)
+TienShan_Scenario3_run26
+
+TienShan_Scenario3_run26_results <- reshape2::melt(TienShan_Scenario3_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run26_results_plot <- ggplot(TienShan_Scenario3_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+TienShan_Scenario3_run27 <- subset(TienShan_Scenario3, run == 27)
+TienShan_Scenario3_run27
+
+TienShan_Scenario_3_run27_results <- reshape2::melt(TienShan_Scenario3_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+TienShan_Scenario_3_run27_results_plot <- ggplot(TienShan_Scenario_3_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(TienShan_Scenario_3_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+scenario3_prob20 = grid.arrange(TienShan_Scenario_3_run1_results_plot,
+                                TienShan_Scenario_3_run4_results_plot,
+                                TienShan_Scenario_3_run7_results_plot,
+                                TienShan_Scenario_3_run10_results_plot,
+                                TienShan_Scenario_3_run13_results_plot,
+                                TienShan_Scenario_3_run16_results_plot,
+                                TienShan_Scenario_3_run19_results_plot,
+                                TienShan_Scenario_3_run22_results_plot,
+                                TienShan_Scenario_3_run25_results_plot,
+                                top = textGrob("Scenario 3 Tian Shan, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario3_prob20
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_3_20 <- list(TienShan_Scenario_3_run1_results,
+                                  TienShan_Scenario_3_run4_results,
+                                  TienShan_Scenario_3_run7_results,
+                                  TienShan_Scenario_3_run10_results,
+                                  TienShan_Scenario_3_run13_results,
+                                  TienShan_Scenario_3_run16_results,
+                                  TienShan_Scenario_3_run19_results,
+                                  TienShan_Scenario_3_run22_results,
+                                  TienShan_Scenario_3_run25_results)
+
+# join in one data frame
+combined_simulation_tienshan_3_20 <- bind_rows(simulations_tienshan_3_20, .id = "SimulationID")
+
+
+summary_simulation_tienshan_3_20 <- combined_simulation_tienshan_3_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_3_20
+
+
+plot_tienshan_3_20 <- ggplot(summary_simulation_tienshan_3_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Tian Shan, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() 
+
+plot_tienshan_3_20
+
+
+
+
+
+#### together prob. 0.50 ####
+
+scenario3_prob50 = grid.arrange(TienShan_Scenario_3_run2_results_plot,
+                                TienShan_Scenario_3_run5_results_plot,
+                                TienShan_Scenario_3_run8_results_plot,
+                                TienShan_Scenario_3_run11_results_plot,
+                                TienShan_Scenario_3_run14_results_plot,
+                                TienShan_Scenario_3_run17_results_plot,
+                                TienShan_Scenario_3_run20_results_plot,
+                                TienShan_Scenario_3_run23_results_plot,
+                                TienShan_Scenario_3_run26_results_plot,
+                                top = textGrob("Scenario 3 Tian Shan, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario3_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_3_50 <- list(TienShan_Scenario_3_run2_results,
+                                  TienShan_Scenario_3_run5_results,
+                                  TienShan_Scenario_3_run8_results,
+                                  TienShan_Scenario_3_run11_results,
+                                  TienShan_Scenario_3_run14_results,
+                                  TienShan_Scenario_3_run17_results,
+                                  TienShan_Scenario_3_run20_results,
+                                  TienShan_Scenario_3_run23_results,
+                                  TienShan_Scenario_3_run26_results)
+
+# join in one data frame
+combined_simulation_tienshan_3_50 <- bind_rows(simulations_tienshan_3_50, .id = "SimulationID")
+
+
+summary_simulation_tienshan_3_50 <- combined_simulation_tienshan_3_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_3_50
+
+
+plot_tienshan_3_50 <- ggplot(summary_simulation_tienshan_3_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Tian Shan, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal()
+
+plot_tienshan_3_50
+
+
+
+
+
+
+
+#### together prob. 0.80 ####
+
+scenario3_prob80 = grid.arrange(TienShan_Scenario_3_run3_results_plot,
+                                TienShan_Scenario_3_run6_results_plot,
+                                TienShan_Scenario_3_run9_results_plot,
+                                TienShan_Scenario_3_run12_results_plot,
+                                TienShan_Scenario_3_run15_results_plot,
+                                TienShan_Scenario_3_run18_results_plot,
+                                TienShan_Scenario_3_run21_results_plot,
+                                TienShan_Scenario_3_run24_results_plot,
+                                TienShan_Scenario_3_run27_results_plot,
+                                top = textGrob("Scenario 3 Tian Shan, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+scenario3_prob80
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_tienshan_3_80 <- list(TienShan_Scenario_3_run3_results,
+                                  TienShan_Scenario_3_run6_results,
+                                  TienShan_Scenario_3_run9_results,
+                                  TienShan_Scenario_3_run12_results,
+                                  TienShan_Scenario_3_run15_results,
+                                  TienShan_Scenario_3_run18_results,
+                                  TienShan_Scenario_3_run21_results,
+                                  TienShan_Scenario_3_run24_results,
+                                  TienShan_Scenario_3_run27_results)
+
+# join in one data frame
+combined_simulation_tienshan_3_80 <- bind_rows(simulations_tienshan_3_80, .id = "SimulationID")
+
+
+summary_simulation_tienshan_3_80 <- combined_simulation_tienshan_3_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_tienshan_3_80
+
+
+plot_tienshan_3_80 <- ggplot(summary_simulation_tienshan_3_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Tian Shan, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal()
+
+plot_tienshan_3_80
+
+
+
+
+#### ALTAI - SCENARIO 1 ####
+
+
+Altai_Scenario1 <- PaleoCOOP_model_Scenario1_Altai
+Altai_Scenario1
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+Altai_Scenario1_run1 <- subset(Altai_Scenario1, run == 1)
+Altai_Scenario1_run1
+
+
+Altai_Scenario_1_run1_results <- reshape2::melt(Altai_Scenario1_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run1_results_plot <- ggplot(Altai_Scenario_1_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+
+
+print(Altai_Scenario_1_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario1_run2 <- subset(Altai_Scenario1, run == 2)
+Altai_Scenario1_run2
+
+
+Altai_Scenario_1_run2_results <- reshape2::melt(Altai_Scenario1_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run2_results_plot <- ggplot(Altai_Scenario_1_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+
+print(Altai_Scenario_1_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario1_run3 <- subset(Altai_Scenario1, run == 3)
+Altai_Scenario1_run3
+
+Altai_Scenario_1_run3_results <- reshape2::melt(Altai_Scenario1_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run3_results_plot <- ggplot(Altai_Scenario_1_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+print(Altai_Scenario_1_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+Altai_Scenario1_run4 <- subset(Altai_Scenario1, run == 4)
+Altai_Scenario1_run4
+
+Altai_Scenario_1_run4_results <- reshape2::melt(Altai_Scenario1_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run4_results_plot <- ggplot(Altai_Scenario_1_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+
+print(Altai_Scenario_1_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+Altai_Scenario1_run5 <- subset(Altai_Scenario1, run == 5)
+Altai_Scenario1_run5
+
+Altai_Scenario_1_run5_results <- reshape2::melt(Altai_Scenario1_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run5_results_plot <- ggplot(Altai_Scenario_1_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+
+print(Altai_Scenario_1_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+Altai_Scenario1_run6 <- subset(Altai_Scenario1, run == 6)
+Altai_Scenario1_run6
+
+Altai_Scenario_1_run6_results <- reshape2::melt(Altai_Scenario1_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run6_results_plot <- ggplot(Altai_Scenario_1_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+Altai_Scenario1_run7 <- subset(Altai_Scenario1, run == 7)
+Altai_Scenario1_run7
+
+Altai_Scenario_1_run7_results <- reshape2::melt(Altai_Scenario1_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run7_results_plot <- ggplot(Altai_Scenario_1_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario1_run8 <- subset(Altai_Scenario1, run == 8)
+Altai_Scenario1_run8
+
+Altai_Scenario_1_run8_results <- reshape2::melt(Altai_Scenario1_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run8_results_plot <- ggplot(Altai_Scenario_1_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(Altai_Scenario_1_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario1_run9 <- subset(Altai_Scenario1, run == 9)
+Altai_Scenario1_run9
+
+Altai_Scenario_1_run9_results <- reshape2::melt(Altai_Scenario1_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run9_results_plot <- ggplot(Altai_Scenario_1_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario1_run10 <- subset(Altai_Scenario1, run == 10)
+Altai_Scenario1_run10
+
+Altai_Scenario_1_run10_results <- reshape2::melt(Altai_Scenario1_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run10_results_plot <- ggplot(Altai_Scenario_1_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 70), expand = c(0, 0))
+
+print(Altai_Scenario_1_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario1_run11 <- subset(Altai_Scenario1, run == 11)
+Altai_Scenario1_run11
+
+Altai_Scenario_1_run11_results <- reshape2::melt(Altai_Scenario1_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run11_results_plot <- ggplot(Altai_Scenario_1_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(Altai_Scenario_1_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+Altai_Scenario1_run12 <- subset(Altai_Scenario1, run == 12)
+Altai_Scenario1_run12
+
+Altai_Scenario_1_run12_results <- reshape2::melt(Altai_Scenario1_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run12_results_plot <- ggplot(Altai_Scenario_1_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(Altai_Scenario_1_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario1_run13 <- subset(Altai_Scenario1, run == 13)
+Altai_Scenario1_run13
+
+Altai_Scenario_1_run13_results <- reshape2::melt(Altai_Scenario1_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run13_results_plot <- ggplot(Altai_Scenario_1_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario1_run14 <- subset(Altai_Scenario1, run == 14)
+Altai_Scenario1_run14
+
+Altai_Scenario_1_run14_results <- reshape2::melt(Altai_Scenario1_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run14_results_plot <- ggplot(Altai_Scenario_1_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_1_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario1_run15 <- subset(Altai_Scenario1, run == 15)
+Altai_Scenario1_run15
+
+Altai_Scenario_1_run15_results <- reshape2::melt(Altai_Scenario1_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run15_results_plot <- ggplot(Altai_Scenario_1_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Tian Shan. Scenario 1. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(Altai_Scenario_1_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario1_run16 <- subset(Altai_Scenario1, run == 16)
+Altai_Scenario1_run16
+
+Altai_Scenario_1_run16_results <- reshape2::melt(Altai_Scenario1_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run16_results_plot <- ggplot(Altai_Scenario_1_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 70), expand = c(0, 0))
+
+print(Altai_Scenario_1_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario1_run17 <- subset(Altai_Scenario1, run == 17)
+Altai_Scenario1_run17
+
+Altai_Scenario_1_run17_results <- reshape2::melt(Altai_Scenario1_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run17_results_plot <- ggplot(Altai_Scenario_1_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_1_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario1_run18 <- subset(Altai_Scenario1, run == 18)
+Altai_Scenario1_run18
+
+Altai_Scenario_1_run18_results <- reshape2::melt(Altai_Scenario1_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run18_results_plot <- ggplot(Altai_Scenario_1_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_1_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario1_run19 <- subset(Altai_Scenario1, run == 19)
+Altai_Scenario1_run19
+
+Altai_Scenario_1_run19_results <- reshape2::melt(Altai_Scenario1_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run19_results_plot <- ggplot(Altai_Scenario_1_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(Altai_Scenario_1_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario1_run20 <- subset(Altai_Scenario1, run == 20)
+Altai_Scenario1_run20
+
+Altai_Scenario_1_run20_results <- reshape2::melt(Altai_Scenario1_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run20_results_plot <- ggplot(Altai_Scenario_1_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 95), expand = c(0, 0))
+
+print(Altai_Scenario_1_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario1_run21 <- subset(Altai_Scenario1, run == 21)
+Altai_Scenario1_run21
+
+Altai_Scenario_1_run21_results <- reshape2::melt(Altai_Scenario1_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run21_results_plot <- ggplot(Altai_Scenario_1_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario1_run22 <- subset(Altai_Scenario1, run == 22)
+Altai_Scenario1_run22
+
+Altai_Scenario_1_run22_results <- reshape2::melt(Altai_Scenario1_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run22_results_plot <- ggplot(Altai_Scenario_1_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(Altai_Scenario_1_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario1_run23 <- subset(Altai_Scenario1, run == 23)
+Altai_Scenario1_run23
+
+Altai_Scenario_1_run23_results <- reshape2::melt(Altai_Scenario1_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run23_results_plot <- ggplot(Altai_Scenario_1_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 700), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(Altai_Scenario_1_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario1_run24 <- subset(Altai_Scenario1, run == 24)
+Altai_Scenario1_run24
+
+Altai_Scenario_1_run24_results <- reshape2::melt(Altai_Scenario1_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run24_results_plot <- ggplot(Altai_Scenario_1_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario1_run25 <- subset(Altai_Scenario1, run == 25)
+Altai_Scenario1_run25
+
+Altai_Scenario_1_run25_results <- reshape2::melt(Altai_Scenario1_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run25_results_plot <- ggplot(Altai_Scenario_1_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 75), expand = c(0, 0))
+
+print(Altai_Scenario_1_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+Altai_Scenario1_run26 <- subset(Altai_Scenario1, run == 26)
+Altai_Scenario1_run26
+
+Altai_Scenario_1_run26_results <- reshape2::melt(Altai_Scenario1_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run26_results_plot <- ggplot(Altai_Scenario_1_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 700), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(Altai_Scenario_1_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario1_run27 <- subset(Altai_Scenario1, run == 27)
+Altai_Scenario1_run27
+
+Altai_Scenario_1_run27_results <- reshape2::melt(Altai_Scenario1_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_1_run27_results_plot <- ggplot(Altai_Scenario_1_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 1. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+print(Altai_Scenario_1_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+altai_scenario1_prob20 = grid.arrange(Altai_Scenario_1_run1_results_plot,
+                                Altai_Scenario_1_run4_results_plot,
+                                Altai_Scenario_1_run7_results_plot,
+                                Altai_Scenario_1_run10_results_plot,
+                                Altai_Scenario_1_run13_results_plot,
+                                Altai_Scenario_1_run16_results_plot,
+                                Altai_Scenario_1_run19_results_plot,
+                                Altai_Scenario_1_run22_results_plot,
+                                Altai_Scenario_1_run25_results_plot,
+                                top = textGrob("Scenario 1 Altai, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario1_prob20
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_1_20 <- list(Altai_Scenario_1_run1_results,
+                               Altai_Scenario_1_run4_results,
+                               Altai_Scenario_1_run7_results,
+                               Altai_Scenario_1_run10_results,
+                               Altai_Scenario_1_run13_results,
+                               Altai_Scenario_1_run16_results,
+                               Altai_Scenario_1_run19_results,
+                               Altai_Scenario_1_run22_results,
+                               Altai_Scenario_1_run25_results)
+
+# join in one data frame
+combined_simulation_altai_1_20 <- bind_rows(simulations_altai_1_20, .id = "SimulationID")
+
+
+summary_simulation_altai_1_20 <- combined_simulation_altai_1_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_1_20
+
+
+plot_altai_1_20 <- ggplot(summary_simulation_altai_1_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Altai, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+
+
+
+plot_altai_1_20
+
+
+
+
+#### together prob. 0.50 ####
+
+altai_scenario1_prob50 = grid.arrange(Altai_Scenario_1_run2_results_plot,
+                                Altai_Scenario_1_run5_results_plot,
+                                Altai_Scenario_1_run8_results_plot,
+                                Altai_Scenario_1_run11_results_plot,
+                                Altai_Scenario_1_run14_results_plot,
+                                Altai_Scenario_1_run17_results_plot,
+                                Altai_Scenario_1_run20_results_plot,
+                                Altai_Scenario_1_run23_results_plot,
+                                Altai_Scenario_1_run26_results_plot,
+                                top = textGrob("Scenario 1 Altai, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario1_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_1_50 <- list(Altai_Scenario_1_run2_results,
+                               Altai_Scenario_1_run5_results,
+                               Altai_Scenario_1_run8_results,
+                               Altai_Scenario_1_run11_results,
+                               Altai_Scenario_1_run14_results,
+                               Altai_Scenario_1_run17_results,
+                               Altai_Scenario_1_run20_results,
+                               Altai_Scenario_1_run23_results,
+                               Altai_Scenario_1_run26_results)
+
+# join in one data frame
+combined_simulation_altai_1_50 <- bind_rows(simulations_altai_1_50, .id = "SimulationID")
+
+
+summary_simulation_altai_1_50 <- combined_simulation_altai_1_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_1_50
+
+
+plot_altai_1_50 <- ggplot(summary_simulation_altai_1_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Altai, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+plot_altai_1_50
+
+
+
+#### together prob. 0.80 ####
+
+altai_scenario1_prob80 = grid.arrange(Altai_Scenario_1_run3_results_plot,
+                                Altai_Scenario_1_run6_results_plot,
+                                Altai_Scenario_1_run9_results_plot,
+                                Altai_Scenario_1_run12_results_plot,
+                                Altai_Scenario_1_run15_results_plot,
+                                Altai_Scenario_1_run18_results_plot,
+                                Altai_Scenario_1_run21_results_plot,
+                                Altai_Scenario_1_run24_results_plot,
+                                Altai_Scenario_1_run27_results_plot,
+                                top = textGrob("Scenario 1 Altai, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario1_prob80
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_1_80 <- list(Altai_Scenario_1_run3_results,
+                               Altai_Scenario_1_run6_results,
+                               Altai_Scenario_1_run9_results,
+                               Altai_Scenario_1_run12_results,
+                               Altai_Scenario_1_run15_results,
+                               Altai_Scenario_1_run18_results,
+                               Altai_Scenario_1_run21_results,
+                               Altai_Scenario_1_run24_results,
+                               Altai_Scenario_1_run27_results)
+
+# join in one data frame
+combined_simulation_altai_1_80 <- bind_rows(simulations_altai_1_80, .id = "SimulationID")
+
+
+summary_simulation_altai_1_80 <- combined_simulation_altai_1_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_1_80
+
+
+plot_altai_1_80 <- ggplot(summary_simulation_altai_1_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 1 Altai, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+plot_altai_1_80
+
+
+
+
+#### ALTAI - SCENARIO 4 ####
+
+
+Altai_Scenario4 <- PaleoCOOP_model_Scenario4_Altai
+Altai_Scenario4
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+Altai_Scenario4_run1 <- subset(Altai_Scenario4, run == 1)
+Altai_Scenario4_run1
+
+
+Altai_Scenario_4_run1_results <- reshape2::melt(Altai_Scenario4_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run1_results_plot <- ggplot(Altai_Scenario_4_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+
+print(Altai_Scenario_4_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+Altai_Scenario4_run2 <- subset(Altai_Scenario4, run == 2)
+Altai_Scenario4_run2
+
+
+Altai_Scenario_4_run2_results <- reshape2::melt(Altai_Scenario4_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run2_results_plot <- ggplot(Altai_Scenario_4_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+print(Altai_Scenario_4_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario4_run3 <- subset(Altai_Scenario4, run == 3)
+Altai_Scenario4_run3
+
+Altai_Scenario_4_run3_results <- reshape2::melt(Altai_Scenario4_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run3_results_plot <- ggplot(Altai_Scenario_4_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 400), expand = c(0, 0))
+
+
+print(Altai_Scenario_4_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+Altai_Scenario4_run4 <- subset(Altai_Scenario4, run == 4)
+Altai_Scenario4_run4
+
+Altai_Scenario_4_run4_results <- reshape2::melt(Altai_Scenario4_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run4_results_plot <- ggplot(Altai_Scenario_4_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+
+print(Altai_Scenario_4_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+Altai_Scenario4_run5 <- subset(Altai_Scenario4, run == 5)
+Altai_Scenario4_run5
+
+Altai_Scenario_4_run5_results <- reshape2::melt(Altai_Scenario4_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run5_results_plot <- ggplot(Altai_Scenario_4_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+
+print(Altai_Scenario_4_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+Altai_Scenario4_run6 <- subset(Altai_Scenario4, run == 6)
+Altai_Scenario4_run6
+
+Altai_Scenario_4_run6_results <- reshape2::melt(Altai_Scenario4_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run6_results_plot <- ggplot(Altai_Scenario_4_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 400), expand = c(0, 0))
+
+print(Altai_Scenario_4_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+Altai_Scenario4_run7 <- subset(Altai_Scenario4, run == 7)
+Altai_Scenario4_run7
+
+Altai_Scenario_4_run7_results <- reshape2::melt(Altai_Scenario4_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run7_results_plot <- ggplot(Altai_Scenario_4_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario4_run8 <- subset(Altai_Scenario4, run == 8)
+Altai_Scenario4_run8
+
+Altai_Scenario_4_run8_results <- reshape2::melt(Altai_Scenario4_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run8_results_plot <- ggplot(Altai_Scenario_4_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(Altai_Scenario_4_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario4_run9 <- subset(Altai_Scenario4, run == 9)
+Altai_Scenario4_run9
+
+Altai_Scenario_4_run9_results <- reshape2::melt(Altai_Scenario4_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run9_results_plot <- ggplot(Altai_Scenario_4_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario4_run10 <- subset(Altai_Scenario4, run == 10)
+Altai_Scenario4_run10
+
+Altai_Scenario_4_run10_results <- reshape2::melt(Altai_Scenario4_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run10_results_plot <- ggplot(Altai_Scenario_4_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(Altai_Scenario_4_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario4_run11 <- subset(Altai_Scenario4, run == 11)
+Altai_Scenario4_run11
+
+Altai_Scenario_4_run11_results <- reshape2::melt(Altai_Scenario4_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run11_results_plot <- ggplot(Altai_Scenario_4_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+Altai_Scenario4_run12 <- subset(Altai_Scenario4, run == 12)
+Altai_Scenario4_run12
+
+Altai_Scenario_4_run12_results <- reshape2::melt(Altai_Scenario4_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run12_results_plot <- ggplot(Altai_Scenario_4_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario4_run13 <- subset(Altai_Scenario4, run == 13)
+Altai_Scenario4_run13
+
+Altai_Scenario_4_run13_results <- reshape2::melt(Altai_Scenario4_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run13_results_plot <- ggplot(Altai_Scenario_4_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 860), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario4_run14 <- subset(Altai_Scenario4, run == 14)
+Altai_Scenario4_run14
+
+Altai_Scenario_4_run14_results <- reshape2::melt(Altai_Scenario4_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run14_results_plot <- ggplot(Altai_Scenario_4_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(Altai_Scenario_4_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario4_run15 <- subset(Altai_Scenario4, run == 15)
+Altai_Scenario4_run15
+
+Altai_Scenario_4_run15_results <- reshape2::melt(Altai_Scenario4_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run15_results_plot <- ggplot(Altai_Scenario_4_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario4_run16 <- subset(Altai_Scenario4, run == 16)
+Altai_Scenario4_run16
+
+Altai_Scenario_4_run16_results <- reshape2::melt(Altai_Scenario4_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run16_results_plot <- ggplot(Altai_Scenario_4_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario4_run17 <- subset(Altai_Scenario4, run == 17)
+Altai_Scenario4_run17
+
+Altai_Scenario_4_run17_results <- reshape2::melt(Altai_Scenario4_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run17_results_plot <- ggplot(Altai_Scenario_4_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario4_run18 <- subset(Altai_Scenario4, run == 18)
+Altai_Scenario4_run18
+
+Altai_Scenario_4_run18_results <- reshape2::melt(Altai_Scenario4_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run18_results_plot <- ggplot(Altai_Scenario_4_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(Altai_Scenario_4_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario4_run19 <- subset(Altai_Scenario4, run == 19)
+Altai_Scenario4_run19
+
+Altai_Scenario_4_run19_results <- reshape2::melt(Altai_Scenario4_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run19_results_plot <- ggplot(Altai_Scenario_4_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario4_run20 <- subset(Altai_Scenario4, run == 20)
+Altai_Scenario4_run20
+
+Altai_Scenario_4_run20_results <- reshape2::melt(Altai_Scenario4_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run20_results_plot <- ggplot(Altai_Scenario_4_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+print(Altai_Scenario_4_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario4_run21 <- subset(Altai_Scenario4, run == 21)
+Altai_Scenario4_run21
+
+Altai_Scenario_4_run21_results <- reshape2::melt(Altai_Scenario4_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run21_results_plot <- ggplot(Altai_Scenario_4_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario4_run22 <- subset(Altai_Scenario4, run == 22)
+Altai_Scenario4_run22
+
+Altai_Scenario_4_run22_results <- reshape2::melt(Altai_Scenario4_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run22_results_plot <- ggplot(Altai_Scenario_4_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario4_run23 <- subset(Altai_Scenario4, run == 23)
+Altai_Scenario4_run23
+
+Altai_Scenario_4_run23_results <- reshape2::melt(Altai_Scenario4_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run23_results_plot <- ggplot(Altai_Scenario_4_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 120), expand = c(0, 0))
+
+print(Altai_Scenario_4_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario4_run24 <- subset(Altai_Scenario4, run == 24)
+Altai_Scenario4_run24
+
+Altai_Scenario_4_run24_results <- reshape2::melt(Altai_Scenario4_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run24_results_plot <- ggplot(Altai_Scenario_4_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 200), expand = c(0, 0))
+
+print(Altai_Scenario_4_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario4_run25 <- subset(Altai_Scenario4, run == 25)
+Altai_Scenario4_run25
+
+Altai_Scenario_4_run25_results <- reshape2::melt(Altai_Scenario4_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run25_results_plot <- ggplot(Altai_Scenario_4_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 900), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+Altai_Scenario4_run26 <- subset(Altai_Scenario4, run == 26)
+Altai_Scenario4_run26
+
+Altai_Scenario_4_run26_results <- reshape2::melt(Altai_Scenario4_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run26_results_plot <- ggplot(Altai_Scenario_4_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 100), expand = c(0, 0))
+
+print(Altai_Scenario_4_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario4_run27 <- subset(Altai_Scenario4, run == 27)
+Altai_Scenario4_run27
+
+Altai_Scenario_4_run27_results <- reshape2::melt(Altai_Scenario4_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_4_run27_results_plot <- ggplot(Altai_Scenario_4_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 4. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+print(Altai_Scenario_4_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+altai_scenario4_prob20 = grid.arrange(Altai_Scenario_4_run1_results_plot,
+                                      Altai_Scenario_4_run4_results_plot,
+                                      Altai_Scenario_4_run7_results_plot,
+                                      Altai_Scenario_4_run10_results_plot,
+                                      Altai_Scenario_4_run13_results_plot,
+                                      Altai_Scenario_4_run16_results_plot,
+                                      Altai_Scenario_4_run19_results_plot,
+                                      Altai_Scenario_4_run22_results_plot,
+                                      Altai_Scenario_4_run25_results_plot,
+                                      top = textGrob("Scenario 4 Altai, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario4_prob20
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_4_20 <- list(Altai_Scenario_4_run1_results,
+                               Altai_Scenario_4_run4_results,
+                               Altai_Scenario_4_run7_results,
+                               Altai_Scenario_4_run10_results,
+                               Altai_Scenario_4_run13_results,
+                               Altai_Scenario_4_run16_results,
+                               Altai_Scenario_4_run19_results,
+                               Altai_Scenario_4_run22_results,
+                               Altai_Scenario_4_run25_results)
+
+# join in one data frame
+combined_simulation_altai_4_20 <- bind_rows(simulations_altai_4_20, .id = "SimulationID")
+
+
+summary_simulation_altai_4_20 <- combined_simulation_altai_4_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_4_20
+
+
+plot_altai_4_20 <- ggplot(summary_simulation_altai_4_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Altai, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 150), expand = c(0, 0))
+
+
+plot_altai_4_20
+
+
+
+#### together prob. 0.50 ####
+
+altai_scenario4_prob50 = grid.arrange(Altai_Scenario_4_run2_results_plot,
+                                      Altai_Scenario_4_run5_results_plot,
+                                      Altai_Scenario_4_run8_results_plot,
+                                      Altai_Scenario_4_run11_results_plot,
+                                      Altai_Scenario_4_run14_results_plot,
+                                      Altai_Scenario_4_run17_results_plot,
+                                      Altai_Scenario_4_run20_results_plot,
+                                      Altai_Scenario_4_run23_results_plot,
+                                      Altai_Scenario_4_run26_results_plot,
+                                      top = textGrob("Scenario 4 Altai, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario4_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_4_50 <- list(Altai_Scenario_4_run2_results,
+                               Altai_Scenario_4_run5_results,
+                               Altai_Scenario_4_run8_results,
+                               Altai_Scenario_4_run11_results,
+                               Altai_Scenario_4_run14_results,
+                               Altai_Scenario_4_run17_results,
+                               Altai_Scenario_4_run20_results,
+                               Altai_Scenario_4_run23_results,
+                               Altai_Scenario_4_run26_results)
+
+# join in one data frame
+combined_simulation_altai_4_50 <- bind_rows(simulations_altai_4_50, .id = "SimulationID")
+
+
+summary_simulation_altai_4_50 <- combined_simulation_altai_4_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_4_50
+
+
+plot_altai_4_50 <- ggplot(summary_simulation_altai_4_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Altai, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 250), expand = c(0, 0))
+
+
+plot_altai_4_50
+
+
+
+
+#### together prob. 0.80 ####
+
+altai_scenario4_prob80 = grid.arrange(Altai_Scenario_4_run3_results_plot,
+                                      Altai_Scenario_4_run6_results_plot,
+                                      Altai_Scenario_4_run9_results_plot,
+                                      Altai_Scenario_4_run12_results_plot,
+                                      Altai_Scenario_4_run15_results_plot,
+                                      Altai_Scenario_4_run18_results_plot,
+                                      Altai_Scenario_4_run21_results_plot,
+                                      Altai_Scenario_4_run24_results_plot,
+                                      Altai_Scenario_4_run27_results_plot,
+                                      top = textGrob("Scenario 4 Altai, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario4_prob80
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_4_80 <- list(Altai_Scenario_4_run3_results,
+                               Altai_Scenario_4_run6_results,
+                               Altai_Scenario_4_run9_results,
+                               Altai_Scenario_4_run12_results,
+                               Altai_Scenario_4_run15_results,
+                               Altai_Scenario_4_run18_results,
+                               Altai_Scenario_4_run21_results,
+                               Altai_Scenario_4_run24_results,
+                               Altai_Scenario_4_run27_results)
+
+# join in one data frame
+combined_simulation_altai_4_80 <- bind_rows(simulations_altai_4_80, .id = "SimulationID")
+
+
+summary_simulation_altai_4_80 <- combined_simulation_altai_4_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_4_80
+
+
+plot_altai_4_80 <- ggplot(summary_simulation_altai_4_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 4 Altai, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 300), expand = c(0, 0))
+
+
+plot_altai_4_80
+
+
+
+#### ALTAI - SCENARIO 2 ####
+
+
+Altai_Scenario2 <- PaleoCOOP_model_Scenario2_Altai
+Altai_Scenario2
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+Altai_Scenario2_run1 <- subset(Altai_Scenario2, run == 1)
+Altai_Scenario2_run1
+
+
+Altai_Scenario_2_run1_results <- reshape2::melt(Altai_Scenario2_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run1_results_plot <- ggplot(Altai_Scenario_2_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 120), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+
+print(Altai_Scenario_2_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+Altai_Scenario2_run2 <- subset(Altai_Scenario2, run == 2)
+Altai_Scenario2_run2
+
+
+Altai_Scenario_2_run2_results <- reshape2::melt(Altai_Scenario2_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run2_results_plot <- ggplot(Altai_Scenario_2_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 130), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+print(Altai_Scenario_2_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario2_run3 <- subset(Altai_Scenario2, run == 3)
+Altai_Scenario2_run3
+
+Altai_Scenario_2_run3_results <- reshape2::melt(Altai_Scenario2_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run3_results_plot <- ggplot(Altai_Scenario_2_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+
+print(Altai_Scenario_2_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+Altai_Scenario2_run4 <- subset(Altai_Scenario2, run == 4)
+Altai_Scenario2_run4
+
+Altai_Scenario_2_run4_results <- reshape2::melt(Altai_Scenario2_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run4_results_plot <- ggplot(Altai_Scenario_2_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+print(Altai_Scenario_2_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+Altai_Scenario2_run5 <- subset(Altai_Scenario2, run == 5)
+Altai_Scenario2_run5
+
+Altai_Scenario_2_run5_results <- reshape2::melt(Altai_Scenario2_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run5_results_plot <- ggplot(Altai_Scenario_2_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+
+print(Altai_Scenario_2_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+Altai_Scenario2_run6 <- subset(Altai_Scenario2, run == 6)
+Altai_Scenario2_run6
+
+Altai_Scenario_2_run6_results <- reshape2::melt(Altai_Scenario2_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run6_results_plot <- ggplot(Altai_Scenario_2_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_2_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+Altai_Scenario2_run7 <- subset(Altai_Scenario2, run == 7)
+Altai_Scenario2_run7
+
+Altai_Scenario_2_run7_results <- reshape2::melt(Altai_Scenario2_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run7_results_plot <- ggplot(Altai_Scenario_2_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 120), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario2_run8 <- subset(Altai_Scenario2, run == 8)
+Altai_Scenario2_run8
+
+Altai_Scenario_2_run8_results <- reshape2::melt(Altai_Scenario2_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run8_results_plot <- ggplot(Altai_Scenario_2_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_2_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario2_run9 <- subset(Altai_Scenario2, run == 9)
+Altai_Scenario2_run9
+
+Altai_Scenario_2_run9_results <- reshape2::melt(Altai_Scenario2_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run9_results_plot <- ggplot(Altai_Scenario_2_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 35), expand = c(0, 0))
+
+print(Altai_Scenario_2_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario2_run10 <- subset(Altai_Scenario2, run == 10)
+Altai_Scenario2_run10
+
+Altai_Scenario_2_run10_results <- reshape2::melt(Altai_Scenario2_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run10_results_plot <- ggplot(Altai_Scenario_2_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario2_run11 <- subset(Altai_Scenario2, run == 11)
+Altai_Scenario2_run11
+
+Altai_Scenario_2_run11_results <- reshape2::melt(Altai_Scenario2_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run11_results_plot <- ggplot(Altai_Scenario_2_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 140), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+Altai_Scenario2_run12 <- subset(Altai_Scenario2, run == 12)
+Altai_Scenario2_run12
+
+Altai_Scenario_2_run12_results <- reshape2::melt(Altai_Scenario2_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run12_results_plot <- ggplot(Altai_Scenario_2_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 520), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 35), expand = c(0, 0))
+
+print(Altai_Scenario_2_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario2_run13 <- subset(Altai_Scenario2, run == 13)
+Altai_Scenario2_run13
+
+Altai_Scenario_2_run13_results <- reshape2::melt(Altai_Scenario2_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run13_results_plot <- ggplot(Altai_Scenario_2_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario2_run14 <- subset(Altai_Scenario2, run == 14)
+Altai_Scenario2_run14
+
+Altai_Scenario_2_run14_results <- reshape2::melt(Altai_Scenario2_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run14_results_plot <- ggplot(Altai_Scenario_2_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario2_run15 <- subset(Altai_Scenario2, run == 15)
+Altai_Scenario2_run15
+
+Altai_Scenario_2_run15_results <- reshape2::melt(Altai_Scenario2_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run15_results_plot <- ggplot(Altai_Scenario_2_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 35), expand = c(0, 0))
+
+print(Altai_Scenario_2_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario2_run16 <- subset(Altai_Scenario2, run == 16)
+Altai_Scenario2_run16
+
+Altai_Scenario_2_run16_results <- reshape2::melt(Altai_Scenario2_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run16_results_plot <- ggplot(Altai_Scenario_2_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario2_run17 <- subset(Altai_Scenario2, run == 17)
+Altai_Scenario2_run17
+
+Altai_Scenario_2_run17_results <- reshape2::melt(Altai_Scenario2_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run17_results_plot <- ggplot(Altai_Scenario_2_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 500), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario2_run18 <- subset(Altai_Scenario2, run == 18)
+Altai_Scenario2_run18
+
+Altai_Scenario_2_run18_results <- reshape2::melt(Altai_Scenario2_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run18_results_plot <- ggplot(Altai_Scenario_2_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario2_run19 <- subset(Altai_Scenario2, run == 19)
+Altai_Scenario2_run19
+
+Altai_Scenario_2_run19_results <- reshape2::melt(Altai_Scenario2_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run19_results_plot <- ggplot(Altai_Scenario_2_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario2_run20 <- subset(Altai_Scenario2, run == 20)
+Altai_Scenario2_run20
+
+Altai_Scenario_2_run20_results <- reshape2::melt(Altai_Scenario2_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run20_results_plot <- ggplot(Altai_Scenario_2_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 30), expand = c(0, 0))
+
+print(Altai_Scenario_2_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario2_run21 <- subset(Altai_Scenario2, run == 21)
+Altai_Scenario2_run21
+
+Altai_Scenario_2_run21_results <- reshape2::melt(Altai_Scenario2_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run21_results_plot <- ggplot(Altai_Scenario_2_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario2_run22 <- subset(Altai_Scenario2, run == 22)
+Altai_Scenario2_run22
+
+Altai_Scenario_2_run22_results <- reshape2::melt(Altai_Scenario2_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run22_results_plot <- ggplot(Altai_Scenario_2_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 120), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario2_run23 <- subset(Altai_Scenario2, run == 23)
+Altai_Scenario2_run23
+
+Altai_Scenario_2_run23_results <- reshape2::melt(Altai_Scenario2_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run23_results_plot <- ggplot(Altai_Scenario_2_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario2_run24 <- subset(Altai_Scenario2, run == 24)
+Altai_Scenario2_run24
+
+Altai_Scenario_2_run24_results <- reshape2::melt(Altai_Scenario2_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run24_results_plot <- ggplot(Altai_Scenario_2_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario2_run25 <- subset(Altai_Scenario2, run == 25)
+Altai_Scenario2_run25
+
+Altai_Scenario_2_run25_results <- reshape2::melt(Altai_Scenario2_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run25_results_plot <- ggplot(Altai_Scenario_2_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+Altai_Scenario2_run26 <- subset(Altai_Scenario2, run == 26)
+Altai_Scenario2_run26
+
+Altai_Scenario_2_run26_results <- reshape2::melt(Altai_Scenario2_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run26_results_plot <- ggplot(Altai_Scenario_2_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_2_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario2_run27 <- subset(Altai_Scenario2, run == 27)
+Altai_Scenario2_run27
+
+Altai_Scenario_2_run27_results <- reshape2::melt(Altai_Scenario2_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_2_run27_results_plot <- ggplot(Altai_Scenario_2_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 2-3. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_2_run27_results_plot)
+
+
+
+
+#### together prob. 0.20 ####
+
+altai_scenario2_prob20 = grid.arrange(Altai_Scenario_2_run1_results_plot,
+                                      Altai_Scenario_2_run4_results_plot,
+                                      Altai_Scenario_2_run7_results_plot,
+                                      Altai_Scenario_2_run10_results_plot,
+                                      Altai_Scenario_2_run13_results_plot,
+                                      Altai_Scenario_2_run16_results_plot,
+                                      Altai_Scenario_2_run19_results_plot,
+                                      Altai_Scenario_2_run22_results_plot,
+                                      Altai_Scenario_2_run25_results_plot,
+                                      top = textGrob("Scenarios 2-3 Altai, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario2_prob20
+
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_2_20 <- list(Altai_Scenario_2_run1_results,
+                               Altai_Scenario_2_run4_results,
+                               Altai_Scenario_2_run7_results,
+                               Altai_Scenario_2_run10_results,
+                               Altai_Scenario_2_run13_results,
+                               Altai_Scenario_2_run16_results,
+                               Altai_Scenario_2_run19_results,
+                               Altai_Scenario_2_run22_results,
+                               Altai_Scenario_2_run25_results)
+
+# join in one data frame
+combined_simulation_altai_2_20 <- bind_rows(simulations_altai_2_20, .id = "SimulationID")
+
+
+summary_simulation_altai_2_20 <- combined_simulation_altai_2_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_2_20
+
+
+plot_altai_2_20 <- ggplot(summary_simulation_altai_2_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Altai, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 120), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+plot_altai_2_20
+
+
+
+
+#### together prob. 0.50 ####
+
+altai_scenario2_prob50 = grid.arrange(Altai_Scenario_2_run2_results_plot,
+                                      Altai_Scenario_2_run5_results_plot,
+                                      Altai_Scenario_2_run8_results_plot,
+                                      Altai_Scenario_2_run11_results_plot,
+                                      Altai_Scenario_2_run14_results_plot,
+                                      Altai_Scenario_2_run17_results_plot,
+                                      Altai_Scenario_2_run20_results_plot,
+                                      Altai_Scenario_2_run23_results_plot,
+                                      Altai_Scenario_2_run26_results_plot,
+                                      top = textGrob("Scenarios 2-3 Altai, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario2_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_2_50 <- list(Altai_Scenario_2_run2_results,
+                               Altai_Scenario_2_run5_results,
+                               Altai_Scenario_2_run8_results,
+                               Altai_Scenario_2_run11_results,
+                               Altai_Scenario_2_run14_results,
+                               Altai_Scenario_2_run17_results,
+                               Altai_Scenario_2_run20_results,
+                               Altai_Scenario_2_run23_results,
+                               Altai_Scenario_2_run26_results)
+
+# join in one data frame
+combined_simulation_altai_2_50 <- bind_rows(simulations_altai_2_50, .id = "SimulationID")
+
+
+summary_simulation_altai_2_50 <- combined_simulation_altai_2_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_2_50
+
+
+plot_altai_2_50 <- ggplot(summary_simulation_altai_2_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Altai, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+plot_altai_2_50
+
+
+
+
+#### together prob. 0.80 ####
+
+altai_scenario2_prob80 = grid.arrange(Altai_Scenario_2_run3_results_plot,
+                                      Altai_Scenario_2_run6_results_plot,
+                                      Altai_Scenario_2_run9_results_plot,
+                                      Altai_Scenario_2_run12_results_plot,
+                                      Altai_Scenario_2_run15_results_plot,
+                                      Altai_Scenario_2_run18_results_plot,
+                                      Altai_Scenario_2_run21_results_plot,
+                                      Altai_Scenario_2_run24_results_plot,
+                                      Altai_Scenario_2_run27_results_plot,
+                                      top = textGrob("Scenarios 2-3 Altai, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario2_prob80
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_2_80 <- list(Altai_Scenario_2_run3_results,
+                               Altai_Scenario_2_run6_results,
+                               Altai_Scenario_2_run9_results,
+                               Altai_Scenario_2_run12_results,
+                               Altai_Scenario_2_run15_results,
+                               Altai_Scenario_2_run18_results,
+                               Altai_Scenario_2_run21_results,
+                               Altai_Scenario_2_run24_results,
+                               Altai_Scenario_2_run27_results)
+
+# join in one data frame
+combined_simulation_altai_2_80 <- bind_rows(simulations_altai_2_80, .id = "SimulationID")
+
+
+summary_simulation_altai_2_80 <- combined_simulation_altai_2_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_2_80
+
+
+plot_altai_2_80 <- ggplot(summary_simulation_altai_2_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 2-3 Altai, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 70), expand = c(0, 0))
+
+plot_altai_2_80
+
+
+
+
+#### ALTAI - SCENARIO 3 ####
+
+
+Altai_Scenario3 <- PaleoCOOP_model_Scenario3_Altai
+Altai_Scenario3
+
+#Run 1. alpha 0.2 / cost-coop 10 / prob.coop 0.2
+
+Altai_Scenario3_run1 <- subset(Altai_Scenario3, run == 1)
+Altai_Scenario3_run1
+
+
+Altai_Scenario_3_run1_results <- reshape2::melt(Altai_Scenario3_run1, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run1_results_plot <- ggplot(Altai_Scenario_3_run1_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+
+print(Altai_Scenario_3_run1_results_plot)
+
+
+#Run 2. alpha 0.2 / cost-coop 10 / prob.coop 0.5
+
+Altai_Scenario3_run2 <- subset(Altai_Scenario3, run == 2)
+Altai_Scenario3_run2
+
+
+Altai_Scenario_3_run2_results <- reshape2::melt(Altai_Scenario3_run2, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run2_results_plot <- ggplot(Altai_Scenario_3_run2_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 140), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+print(Altai_Scenario_3_run2_results_plot)
+
+
+#Run 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario3_run3 <- subset(Altai_Scenario3, run == 3)
+Altai_Scenario2_run3
+
+Altai_Scenario_3_run3_results <- reshape2::melt(Altai_Scenario3_run3, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run3_results_plot <- ggplot(Altai_Scenario_3_run3_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0))
+
+
+print(Altai_Scenario_3_run3_results_plot)
+
+#Run 4. alpha 0.2 / cost-coop 20 / prob.coop 0.2
+
+Altai_Scenario3_run4 <- subset(Altai_Scenario3, run == 4)
+Altai_Scenario3_run4
+
+Altai_Scenario_3_run4_results <- reshape2::melt(Altai_Scenario3_run4, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run4_results_plot <- ggplot(Altai_Scenario_3_run4_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+
+print(Altai_Scenario_3_run4_results_plot)
+
+
+#Run 5. alpha 0.2 / cost-coop 20 / prob.coop 0.5
+
+Altai_Scenario3_run5 <- subset(Altai_Scenario3, run == 5)
+Altai_Scenario3_run5
+
+Altai_Scenario_3_run5_results <- reshape2::melt(Altai_Scenario3_run5, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run5_results_plot <- ggplot(Altai_Scenario_3_run5_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 200), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+
+print(Altai_Scenario_3_run5_results_plot)
+
+
+#Run 6. alpha 0.2 / cost-coop 20 / prob.coop 0.8
+
+Altai_Scenario3_run6 <- subset(Altai_Scenario3, run == 6)
+Altai_Scenario3_run6
+
+Altai_Scenario_3_run6_results <- reshape2::melt(Altai_Scenario3_run6, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run6_results_plot <- ggplot(Altai_Scenario_3_run6_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_3_run6_results_plot)
+
+
+#Run 7. alpha 0.2 / cost-coop 50 / prob.coop 0.2
+
+Altai_Scenario3_run7 <- subset(Altai_Scenario3, run == 7)
+Altai_Scenario3_run7
+
+Altai_Scenario_3_run7_results <- reshape2::melt(Altai_Scenario3_run7, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run7_results_plot <- ggplot(Altai_Scenario_3_run7_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run7_results_plot)
+
+
+#Run 8. alpha 0.2 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario3_run8 <- subset(Altai_Scenario3, run == 8)
+Altai_Scenario3_run8
+
+Altai_Scenario_3_run8_results <- reshape2::melt(Altai_Scenario3_run8, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run8_results_plot <- ggplot(Altai_Scenario_3_run8_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 950), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+print(Altai_Scenario_3_run8_results_plot)
+
+
+#Run 9. alpha 0.2 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario3_run9 <- subset(Altai_Scenario3, run == 9)
+Altai_Scenario3_run9
+
+Altai_Scenario_3_run9_results <- reshape2::melt(Altai_Scenario3_run9, 
+                                                   id.vars = "months", 
+                                                   measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run9_results_plot <- ggplot(Altai_Scenario_3_run9_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.2 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_3_run9_results_plot)
+
+
+
+#Run 10. alpha 0.5 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario3_run10 <- subset(Altai_Scenario3, run == 10)
+Altai_Scenario3_run10
+
+Altai_Scenario_3_run10_results <- reshape2::melt(Altai_Scenario3_run10, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run10_results_plot <- ggplot(Altai_Scenario_3_run10_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run10_results_plot)
+
+
+
+#Run 11. alpha 0.5 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario3_run11 <- subset(Altai_Scenario3, run == 11)
+Altai_Scenario3_run11
+
+Altai_Scenario_3_run11_results <- reshape2::melt(Altai_Scenario3_run11, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run11_results_plot <- ggplot(Altai_Scenario_3_run11_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 140), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run11_results_plot)
+
+
+#Run 12. alpha 0.5 / cost-coop 10 / prob.coop 0.8
+
+
+Altai_Scenario3_run12 <- subset(Altai_Scenario3, run == 12)
+Altai_Scenario3_run12
+
+Altai_Scenario_3_run12_results <- reshape2::melt(Altai_Scenario3_run12, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run12_results_plot <- ggplot(Altai_Scenario_3_run12_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_3_run12_results_plot)
+
+
+#Run 13.alpha 0.5 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario3_run13 <- subset(Altai_Scenario3, run == 13)
+Altai_Scenario3_run13
+
+Altai_Scenario_3_run13_results <- reshape2::melt(Altai_Scenario3_run13, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run13_results_plot <- ggplot(Altai_Scenario_3_run13_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run13_results_plot)
+
+
+#Run 14. alpha 0.5 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario3_run14 <- subset(Altai_Scenario3, run == 14)
+Altai_Scenario3_run14
+
+Altai_Scenario_3_run14_results <- reshape2::melt(Altai_Scenario3_run14, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run14_results_plot <- ggplot(Altai_Scenario_3_run14_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 1100), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run14_results_plot)
+
+
+#Run 15. alpha 0.5 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario3_run15 <- subset(Altai_Scenario3, run == 15)
+Altai_Scenario3_run15
+
+Altai_Scenario_3_run15_results <- reshape2::melt(Altai_Scenario3_run15, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run15_results_plot <- ggplot(Altai_Scenario_3_run15_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 550), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 40), expand = c(0, 0))
+
+print(Altai_Scenario_3_run15_results_plot)
+
+
+#Run 16. alpha 0.5 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario3_run16 <- subset(Altai_Scenario3, run == 16)
+Altai_Scenario3_run16
+
+Altai_Scenario_3_run16_results <- reshape2::melt(Altai_Scenario3_run16, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run16_results_plot <- ggplot(Altai_Scenario_3_run16_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run16_results_plot)
+
+
+#Run 17. alpha 0.5 / cost-coop 50 / prob.coop 0.5
+
+Altai_Scenario3_run17 <- subset(Altai_Scenario3, run == 17)
+Altai_Scenario3_run17
+
+Altai_Scenario_3_run17_results <- reshape2::melt(Altai_Scenario3_run17, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run17_results_plot <- ggplot(Altai_Scenario_3_run17_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 500), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run17_results_plot)
+
+
+#Run 18. alpha 0.5 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario3_run18 <- subset(Altai_Scenario3, run == 18)
+Altai_Scenario3_run18
+
+Altai_Scenario_3_run18_results <- reshape2::melt(Altai_Scenario3_run18, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run18_results_plot <- ggplot(Altai_Scenario_3_run18_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.5 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run18_results_plot)
+
+
+#Run 19. alpha 0.8 / cost-coop 10 / prob.coop 0.2
+
+
+Altai_Scenario3_run19 <- subset(Altai_Scenario3, run == 19)
+Altai_Scenario3_run19
+
+Altai_Scenario_3_run19_results <- reshape2::melt(Altai_Scenario3_run19, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run19_results_plot <- ggplot(Altai_Scenario_3_run19_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run19_results_plot)
+
+
+#Run 20. alpha 0.8 / cost-coop 10 / prob.coop 0.5
+
+
+Altai_Scenario3_run20 <- subset(Altai_Scenario3, run == 20)
+Altai_Scenario3_run20
+
+Altai_Scenario_3_run20_results <- reshape2::melt(Altai_Scenario3_run20, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run20_results_plot <- ggplot(Altai_Scenario_3_run20_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 850), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 30), expand = c(0, 0))
+
+print(Altai_Scenario_3_run20_results_plot)
+
+
+#Run 21. alpha 0.8 / cost-coop 10 / prob.coop 0.8
+
+Altai_Scenario3_run21 <- subset(Altai_Scenario3, run == 21)
+Altai_Scenario3_run21
+
+Altai_Scenario_3_run21_results <- reshape2::melt(Altai_Scenario3_run21, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run21_results_plot <- ggplot(Altai_Scenario_3_run21_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 10 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run21_results_plot)
+
+
+#Run 22. alpha 0.8 / cost-coop 20 / prob.coop 0.2
+
+
+Altai_Scenario3_run22 <- subset(Altai_Scenario3, run == 22)
+Altai_Scenario3_run22
+
+Altai_Scenario_3_run22_results <- reshape2::melt(Altai_Scenario3_run22, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run22_results_plot <- ggplot(Altai_Scenario_3_run22_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run22_results_plot)
+
+
+#Run 23. alpha 0.8 / cost-coop 20 / prob.coop 0.5
+
+
+Altai_Scenario3_run23 <- subset(Altai_Scenario3, run == 23)
+Altai_Scenario3_run23
+
+Altai_Scenario_3_run23_results <- reshape2::melt(Altai_Scenario3_run23, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run23_results_plot <- ggplot(Altai_Scenario_3_run23_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run23_results_plot)
+
+
+#Run 24. alpha 0.8 / cost-coop 20 / prob.coop 0.8
+
+
+Altai_Scenario3_run24 <- subset(Altai_Scenario3, run == 24)
+Altai_Scenario3_run24
+
+Altai_Scenario_3_run24_results <- reshape2::melt(Altai_Scenario3_run24, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run24_results_plot <- ggplot(Altai_Scenario_3_run24_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 20 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run24_results_plot)
+
+
+#Run 25. alpha 0.8 / cost-coop 50 / prob.coop 0.2
+
+
+Altai_Scenario3_run25 <- subset(Altai_Scenario3, run == 25)
+Altai_Scenario3_run25
+
+Altai_Scenario_3_run25_results <- reshape2::melt(Altai_Scenario3_run25, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run25_results_plot <- ggplot(Altai_Scenario_3_run25_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.2",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 110), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run25_results_plot)
+
+
+#Run 26. alpha 0.8 / cost-coop 50 / prob.coop 0.5
+
+
+Altai_Scenario3_run26 <- subset(Altai_Scenario3, run == 26)
+Altai_Scenario3_run26
+
+Altai_Scenario_3_run26_results <- reshape2::melt(Altai_Scenario3_run26, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run26_results_plot <- ggplot(Altai_Scenario_3_run26_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.5",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 150), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 20), expand = c(0, 0))
+
+print(Altai_Scenario_3_run26_results_plot)
+
+
+#Run 27 alpha 0.8 / cost-coop 50 / prob.coop 0.8
+
+
+Altai_Scenario3_run27 <- subset(Altai_Scenario3, run == 27)
+Altai_Scenario3_run27
+
+Altai_Scenario_3_run27_results <- reshape2::melt(Altai_Scenario3_run27, 
+                                                    id.vars = "months", 
+                                                    measure.vars = c("cooperators", "defectors"))
+
+
+Altai_Scenario_3_run27_results_plot <- ggplot(Altai_Scenario_3_run27_results, aes(x=months, y=value)) +
+  geom_line(aes(colour=variable), size=1) +  # Cambia 'measure.vars' a 'variable'
+  labs(x="Months", y="Population", 
+       title="Altai. Scenario 3. alpha 0.8 / cost-coop 50 / prob.coop 0.8",
+       color="Legend") +
+  scale_color_manual(values=c('darkseagreen3', 'coral1')) +
+  theme_minimal() + 
+  theme(legend.title=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(limits = c(0, 160), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 25), expand = c(0, 0))
+
+print(Altai_Scenario_3_run27_results_plot)
+
+
+
+#### together prob. 0.20 ####
+
+altai_scenario3_prob20 = grid.arrange(Altai_Scenario_3_run1_results_plot,
+                                      Altai_Scenario_3_run4_results_plot,
+                                      Altai_Scenario_3_run7_results_plot,
+                                      Altai_Scenario_3_run10_results_plot,
+                                      Altai_Scenario_3_run13_results_plot,
+                                      Altai_Scenario_3_run16_results_plot,
+                                      Altai_Scenario_3_run19_results_plot,
+                                      Altai_Scenario_3_run22_results_plot,
+                                      Altai_Scenario_3_run25_results_plot,
+                                      top = textGrob("Scenario 3 Altai, prob.coop: 0.20", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario3_prob20
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_3_20 <- list(Altai_Scenario_3_run1_results,
+                               Altai_Scenario_3_run4_results,
+                               Altai_Scenario_3_run7_results,
+                               Altai_Scenario_3_run10_results,
+                               Altai_Scenario_3_run13_results,
+                               Altai_Scenario_3_run16_results,
+                               Altai_Scenario_3_run19_results,
+                               Altai_Scenario_3_run22_results,
+                               Altai_Scenario_3_run25_results)
+
+# join in one data frame
+combined_simulation_altai_3_20 <- bind_rows(simulations_altai_3_20, .id = "SimulationID")
+
+
+summary_simulation_altai_3_20 <- combined_simulation_altai_3_20 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_3_20
+
+
+plot_altai_3_20 <- ggplot(summary_simulation_altai_3_20, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Altai, prob.coop: 0.20",
+       x = "Months", y = "Population") +
+  theme_minimal()
+
+plot_altai_3_20
+
+
+
+
+
+
+
+#### together prob. 0.50 ####
+
+altai_scenario3_prob50 = grid.arrange(Altai_Scenario_3_run2_results_plot,
+                                      Altai_Scenario_3_run5_results_plot,
+                                      Altai_Scenario_3_run8_results_plot,
+                                      Altai_Scenario_3_run11_results_plot,
+                                      Altai_Scenario_3_run14_results_plot,
+                                      Altai_Scenario_3_run17_results_plot,
+                                      Altai_Scenario_3_run20_results_plot,
+                                      Altai_Scenario_3_run23_results_plot,
+                                      Altai_Scenario_3_run26_results_plot,
+                                      top = textGrob("Scenario 3 Altai, prob.coop: 0.50", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario3_prob50
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_3_50 <- list(Altai_Scenario_3_run2_results,
+                               Altai_Scenario_3_run5_results,
+                               Altai_Scenario_3_run8_results,
+                               Altai_Scenario_3_run11_results,
+                               Altai_Scenario_3_run14_results,
+                               Altai_Scenario_3_run17_results,
+                               Altai_Scenario_3_run20_results,
+                               Altai_Scenario_3_run23_results,
+                               Altai_Scenario_3_run26_results)
+
+# join in one data frame
+combined_simulation_altai_3_50 <- bind_rows(simulations_altai_3_50, .id = "SimulationID")
+
+
+summary_simulation_altai_3_50 <- combined_simulation_altai_3_50 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_3_50
+
+
+plot_altai_3_50 <- ggplot(summary_simulation_altai_3_50, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Altai, prob.coop: 0.50",
+       x = "Months", y = "Population") +
+  theme_minimal()
+
+plot_altai_3_50
+
+
+
+
+#### together prob. 0.80 ####
+
+altai_scenario3_prob80 = grid.arrange(Altai_Scenario_3_run3_results_plot,
+                                      Altai_Scenario_3_run6_results_plot,
+                                      Altai_Scenario_3_run9_results_plot,
+                                      Altai_Scenario_3_run12_results_plot,
+                                      Altai_Scenario_3_run15_results_plot,
+                                      Altai_Scenario_3_run18_results_plot,
+                                      Altai_Scenario_3_run21_results_plot,
+                                      Altai_Scenario_3_run24_results_plot,
+                                      Altai_Scenario_3_run27_results_plot,
+                                      top = textGrob("Scenario 3 Altai, prob.coop: 0.80", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+altai_scenario3_prob80
+
+
+
+## COMBINED all the graphics in one plot because there are a lot!!
+
+
+# List of all the simulations
+simulations_altai_3_80 <- list(Altai_Scenario_3_run3_results,
+                               Altai_Scenario_3_run6_results,
+                               Altai_Scenario_3_run9_results,
+                               Altai_Scenario_3_run12_results,
+                               Altai_Scenario_3_run15_results,
+                               Altai_Scenario_3_run18_results,
+                               Altai_Scenario_3_run21_results,
+                               Altai_Scenario_3_run24_results,
+                               Altai_Scenario_3_run27_results)
+
+# join in one data frame
+combined_simulation_altai_3_80 <- bind_rows(simulations_altai_3_80, .id = "SimulationID")
+
+
+summary_simulation_altai_3_80 <- combined_simulation_altai_3_80 %>%
+  group_by(months, variable) %>%
+  summarise(
+    mean_value = mean(value),
+    sd_value = sd(value),
+    min_value = min(value),
+    max_value = max(value),
+    .groups = "drop"
+  )
+
+
+summary_simulation_altai_3_80
+
+
+plot_altai_3_80 <- ggplot(summary_simulation_altai_3_80, aes(x = months, y = mean_value, color = variable, fill = variable)) +
+  # Banda de min-max
+  geom_ribbon(aes(ymin = min_value, ymax = max_value), alpha = 0.4, color = NA) +
+  # sd
+  geom_ribbon(aes(ymin = mean_value - sd_value, ymax = mean_value + sd_value), alpha = 0.1, color = NA) +
+  # average 
+  geom_line(size = 1) +
+  scale_color_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  scale_fill_manual(values = c("cooperators" = "darkseagreen3", "defectors" = "coral1")) +
+  labs(title = "Scenario 3 Altai, prob.coop: 0.80",
+       x = "Months", y = "Population") +
+  theme_minimal()
+
+plot_altai_3_80
+
+
+###### FIGURES USED IN THE PAPER #####
+
+## Total combination
+
+
+#### TIAN SHAN SCENARIO 1 ####
+
+
+scenario1_total_tienshan = grid.arrange(plot_tienshan_20,
+                                        plot_tienshan_50,
+                                        plot_tienshan_80,
+                                top = textGrob("Scenario 1 Tian Shan", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario1_total_tienshan
+
+
+
+#### TIAN SHAN SCENARIO 4 ####
+
+
+
+scenario4_total_tienshan = grid.arrange(plot_tienshan_4_20,
+                                        plot_tienshan_4_50,
+                                        plot_tienshan_4_80,
+                                        top = textGrob("Scenario 4 Tian Shan", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario4_total_tienshan
+
+
+
+#### TIAN SHAN SCENARIOS 2-3 ####
+
+
+
+scenario2_total_tienshan = grid.arrange(plot_tienshan_2_20,
+                                        plot_tienshan_2_50,
+                                        plot_tienshan_2_80,
+                                        top = textGrob("Scenario 2-3 Tian Shan", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario2_total_tienshan
+
+
+#### ALTAI SCENARIO 1 ####
+
+
+scenario1_total_altai = grid.arrange(plot_altai_1_20,
+                                     plot_altai_1_50,
+                                     plot_altai_1_80,
+                                        top = textGrob("Scenario 1 Altai", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario1_total_altai
+
+
+
+#### ALTAI SCENARIO 4 ####
+
+
+scenario4_total_altai = grid.arrange(plot_altai_4_20,
+                                     plot_altai_4_50,
+                                     plot_altai_4_80,
+                                     top = textGrob("Scenario 4 Altai", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario4_total_altai
+
+
+
+
+#### ALTAI SCENARIO 2-3 ####
+
+
+scenario2_total_altai = grid.arrange(plot_altai_2_20,
+                                     plot_altai_2_50,
+                                     plot_altai_2_80,
+                                     top = textGrob("Scenario 2-3 Altai", gp = gpar(fontsize = unit(20, "lines"))), nrow = 3)
+
+
+
+scenario2_total_altai
+
+
+
