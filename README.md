@@ -25,7 +25,7 @@ The repository is organized into 3 folders: `PaleoCOOP_model`, `data_csv`, `prot
    * `/data/maps` -> DEM and shapefiles for the model
 * `/data_csv` -> .csv file of the archaeological places used in the model
 * `/protocol` -> ODD protocol
-* `/scripts` -> scripts for the graphics (R program)
+* `/scripts` -> scripts for the graphics (R program). `/simulations` includes the script used for the model and the files for the simulation as well as the old scripts. 
 
 
 # Funding
